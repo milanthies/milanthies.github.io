@@ -18,7 +18,8 @@ The seminar is organized in three stages of the learning process. First, student
 
 ## Files
 
-[Download PDF](main/Seminar Proposal Milan Thies Computational Text Analysis and the Politics of Education.pdf)
+[Download PDF](Seminar Proposal Milan Thies Computational Text Analysis and the Politics of Education.pdf)
+
 
 
 
