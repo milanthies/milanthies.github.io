@@ -3,6 +3,7 @@
 *University of Marburg*
 
 **Instructor:** Milan Thies, Researcher, European University Institute
+
 **Email:** [milan.thies@eui.eu](mailto:milan.thies@eui.eu)
 
 ## Course Description and Rationale
