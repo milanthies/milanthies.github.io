@@ -17,12 +17,17 @@ In this seminar, we will explore the exciting field of computational text analys
 ## Files
 In the next weeks you will find all teaching material and the updated syllabus below. 
 
+
 ### Syllabus
+
 
 ### Slides
 
+
 ### Code & Data
  
+
+
 
 ## 2023 Computational Text Analysis and the Politics of Education
 
