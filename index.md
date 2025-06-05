@@ -20,20 +20,14 @@ My work examines education- and labour market policy using mixed methods, includ
 - Computational text analysis / text-as-data  
 
 
-## New publication
+## Recently published
 
 **Alvariño, M. & Thies, M.** (2024). “Conviction or Consent? Tracing the Influence of Coalition Partners on Family Policy under Centre-Right Ministers.” *Government & Opposition*. <https://doi.org/10.1017/gov.2024.25>
 
 
-## Manuscripts under review
-
-- **Thies, M.** “Training for the Twin Transitions: Why Governments Intervene in Vocational Education and Training Systems.”  
-- **Cino Pagliarello, M.; Thies, M.; Tubakovic, T.; Nunes, D.** “The Polysemy of Skills: Exploring Country-Specific Approaches in the Knowledge Economy.”
-
-
 ## Teaching
 
-See the dedicated **[Teaching](/teaching/)** page for syllabi, slides, and datasets.
+See the dedicated **[Teaching](/teaching/)** page.
 
 
 ## Contact
