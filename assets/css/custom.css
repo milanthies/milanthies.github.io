@@ -1,0 +1,13 @@
+/* ----- Brand tweaks (overrides Minima after it loads) ----- */
+.site-header        { background:#283593; }   /* deep indigo */
+.site-title,
+.site-nav .page-link{ color:#ffffff !important; }
+.site-nav .page-link:hover{
+  color:#FFB300 !important;                   /* warm amber accent */
+  text-decoration:none;
+}
+/* make links match the accent everywhere */
+a, a:visited        { color:#FFB300; }
+a:hover             { text-decoration:underline; }
+/* optional rounded avatar on landing page */
+.avatar             { border-radius:50%; max-width:180px; }
