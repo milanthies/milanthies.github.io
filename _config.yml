@@ -1,0 +1,5 @@
+theme: minima
+
+minima:
+  nav_pages:
+    - teaching.md
