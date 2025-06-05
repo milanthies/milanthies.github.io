@@ -32,4 +32,4 @@ See the dedicated **[Teaching](/teaching/)** page.
 
 ## Contact
 
-[milan.thies@eui.eu](mailto:milan.thies@eui.eu) &nbsp;|&nbsp; [GitHub](https://github.com/milanthies)
+[milan.thies@eui.eu](mailto:milan.thies@eui.eu)
