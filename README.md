@@ -1,5 +1,5 @@
 # Computational Text Analysis and the Politics of Education
-*Winter Term 2023/24*
+*Summer Term 2025*
 *University of Marburg*
 
 **Instructor:** Milan Thies, Researcher, European University Institute
