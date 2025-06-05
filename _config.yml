@@ -1,5 +1,19 @@
+title: Milan Thies
+description: >-
+  Labour Markets • Computational Text Analysis • Education Politics
+url: "https://milanthies.github.io"
 theme: minima
 
+# ⬇ Minima-3 settings
 minima:
-  nav_pages:
-    - teaching.md
+  skin: auto          # light during the day, dark when OS is dark  :contentReference[oaicite:0]{index=0}
+  nav_pages:          # what appears in the header bar & in what order  :contentReference[oaicite:1]{index=1}
+    - index.md        # Home
+    - teaching.md     # Teaching
+
+# Optional social icons (appear top-right)
+minima:
+  #  … keep skin & nav_pages …
+  social_links:
+    - { platform: github,  user_url: "https://github.com/milanthies" }
+    - { platform: email,   user_url: "mailto:milan.thies@eui.eu" }
