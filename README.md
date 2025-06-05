@@ -18,7 +18,7 @@ The seminar is organized in three stages of the learning process. First, student
 
 ## Files
 
-[Download Syllabus](Syllabus Computational Text Analysis and the Politics of Education 231106.pdf)
+[📄 Download the syllabus](23_cta_syllabus-mt.pdf)
 
 
 
