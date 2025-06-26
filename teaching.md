@@ -15,10 +15,13 @@ permalink: /teaching/   # gives a clean /teaching/ URL
 
 In this seminar, we will explore the exciting field of computational text analysis, also known as text-as-data. As our world becomes increasingly digital, vast amounts of legal, political, scientific, and journalistic text data have become available for analysis. This course is designed as an introduction to the foundational concepts and practical applications of computational text analysis. By the end of the course, you will know how to analyze political texts and be able to apply text-as-data methods in your next academic project, for example your bachelor's or master's thesis. Empirically, we will focus on a policy field that not only affects every university student personally but also one that has been at the forefront of global change: Education. Over the past century, education has expanded from being a privilege of the few to an almost universal and global experience. In Europe, this trend is now increasingly leading to educational upgrading and a massive expansion of higher education. But how has this quiet revolution come about? And what are the central conflicts of educational governance today?
 
+
+
 #### Files
 
 **Syllabus**
-[📄 Download the syllabus](files/2025/25_cta_syllabus-mt.pdf)
+[📄 Download the syllabus](files/2025/25_cta_syllabus-mt.pdf.pdf)
+
 
 **Slides** 
 [📊 Slides Day 1](files/2025/Intro to CTA - Day 1.pdf)
@@ -26,16 +29,25 @@ In this seminar, we will explore the exciting field of computational text analys
 [📊 Slides Day 3](files/2025/Intro to CTA - Day 3.pdf)
 [📊 Slides Day 4](files/2025/Intro to CTA - Day 4.pdf)
 
+
 **Do-files**
 [💻 Script 1 – RMarkdown](files/2025/1_RMarkdown.Rmd)  
+
 [💻 Script 2 – The ABC of Computational Text Analysis](files/2025/2_Texts_Tokens_DFM_Topfeatures.Rmd)
+
 [💻 Script 3 – Pre-Processing and Descriptives](files/2025/3_Pre-Processing & Descriptives.Rmd)
+
 [💻 Script 4 – Dictionaries](files/2025/4_Dictionaries.Rmd)
+
 [💻 Script 5 – Topic Models](files/2025/5_Topic Models.Rmd)
+
+[💻 QCA File - Coalition Treaties](files/2025/250627 Content Analysis Coalition Treaties.xlsx)
 
 **Solutions**
 
 
+**Data**
+[📊 Eurydice](files/2025/eurydice.RDS)
 
 ## 2023 Computational Text Analysis and the Politics of Education
 
@@ -58,9 +70,6 @@ The seminar is organized in three stages of the learning process. First, student
 
 </details>
 
-## Syllabus
-
-[📄 Download the syllabus](23_cta_syllabus-mt.pdf)
 
 
 
