@@ -24,6 +24,7 @@ In this seminar, we will explore the exciting field of computational text analys
 
 
 **Slides** 
+
 [📊 Slides Day 1](files/2025/Intro to CTA - Day 1.pdf)
 [📊 Slides Day 2](files/2025/Intro to CTA - Day 2.pdf)
 [📊 Slides Day 3](files/2025/Intro to CTA - Day 3.pdf)
@@ -31,6 +32,7 @@ In this seminar, we will explore the exciting field of computational text analys
 
 
 **Do-files**
+
 [💻 Script 1 – RMarkdown](files/2025/1_RMarkdown.Rmd)  
 
 [💻 Script 2 – The ABC of Computational Text Analysis](files/2025/2_Texts_Tokens_DFM_Topfeatures.Rmd)
