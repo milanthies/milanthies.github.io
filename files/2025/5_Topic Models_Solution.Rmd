@@ -1,0 +1,161 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Topic Models
+
+## Loading packages; installing package "seededlda"
+```{r}
+
+#install.packages("seededlda")
+
+library(tidyverse)
+library(quanteda)
+library(quanteda.textstats)
+library(seededlda)
+library(ggplot2)
+```
+
+## Getting data ready
+You know the drill: Import data, create corpus, tokenize and remove non-text, create dfm, remove stopwords, wordstem
+
+```{r}
+eurydice <- readRDS("C:.../eurydice.RDS")
+
+corp_eurydice <- corpus(eurydice)
+
+toks_eurydice <- tokens(corp_eurydice,  remove_punct=T,  remove_numbers=T, remove_symbols=T)
+
+dfm_eurydice <- dfm(toks_eurydice)
+dfm_eurydice <- dfm_remove(dfm_eurydice,stopwords("en")) 
+dfm_eurydice <- dfm_wordstem(dfm_eurydice,"en")
+
+```
+
+
+## LDA Topic Modelling (Unsupervised)
+Now you can run an unsupervised LDA topic model. 
+
+1. Use the textmodel_lda() command. In the brackets you should define the dfm this model should learn from and the anmount of topic (k=x). Both specifications are separated with a comma. Before you run it, make sure to assign the model to an object in the enviornment (x <- textmodel_lda())
+2. What terms are associated with each topic? Try to give headlines to the topics. Then assess. What are the advantages / disatvantages of using unsupervised topic modelling?
+
+```{r}
+# run the model. This will take time
+tmod_lda <- textmodel_lda(dfm_eurydice, k = 10)
+
+# what are the terms associated with each topic
+terms(tmod_lda, 20)
+
+```
+3. Lets get a list of the prevalent topics of the first 20 documents(texts) using the command 'head(topics(x), 20)'. Replace x with the name you gave your topic model.
+
+```{r}
+# get prevalent topics of first 20 documents (texts)
+head(topics(tmod_lda), 20)
+
+```
+
+4. To compare the topic frequency we first assign the topic as a new dicument-level variable (docvar). Use the following command 'x$topic <- topics(x)' where the first x is your dfm and the second x is your topic model.
+
+5. To compare the prevalence of topics, use the table() function. The command is table(x$topic) where x is your dfm to which you have assigend 'topic' as a new docvar. The table will list the topics and tell you in how many documents they are prevalent.
+
+```{r}
+# assign topic as a new document-level variable
+dfm_eurydice$topic <- topics(tmod_lda)
+
+# cross-table of the topic frequency
+table(dfm_eurydice$topic)
+
+```
+
+
+## Seeded Topic Model (Supervised)
+In  seeded LDA, you can predefine topics using a dictionary of “seed words". Before running the model you need to define a dictionary using the dictionary() command you learned in the last script. Command: X <- dictionary(list(x=c("x"), x=c("x"))). *Important*: Make sure to define at least two topics, if not more.
+
+1. Define a dictionary with at least two topics (better more topics).
+
+```{r}
+# Define a dictionary
+dict_PubvPriv <- dictionary(list(public = c("public","govern*", "state","regulat*", "control", "nation*"), private = c("privat*","enterpr*", "firm*", "marke*","competit*", "dereg*")))
+
+print(dict_PubvPriv)
+
+
+```
+
+You can run the seeded lda topic model (slda) using the textmodel_seededlda() command. This will take some minutes. The command is as follows: x <- textmodel_seededlda(x,dictionary = x). The first x refers to the name you give your slda model, the second x refers to your dfm and the third x refers to the name of your dictionary that will provide the seed words.
+
+2. Run the seeded lda topic model using the textmodel_seededlda() command.
+
+3. Inspect the first 20 terms associated with each topic using the command terms(x, 20). X stands for the name of your model.
+
+### Caution seeded LDA topic models models are not appropriate for every research question or for all available datasets. The analysis below is provided merely to demonstrate the code on an accessible dataset and is not intended for substantive interpretation.
+
+```{r}
+tmod_slda <- textmodel_seededlda(dfm_eurydice, dictionary = dict_PubvPriv)
+terms(tmod_slda, 20)
+
+```
+
+You can see which topics are prevalent in the different documents using the topics() function.
+
+4. Check which topics are prevalent in the first 20 documents using the topics() function. The command is topic(x). You can also use the 'head' command to only get the first 20. The command would be head(topics(x), 20).
+
+```{r}
+
+topics_slda <- topics(tmod_slda)
+
+head(topics(tmod_slda), 20)
+
+```
+
+
+5. Assign topic as a new document-level variable (docvar) in your dfm. 
+The command is 'x$topic <- topics(x)'. The first x represents your dfm. The second x represents your topic model model.
+
+Now you can get a cross-table of the topic frequencies to see how prevalent which topic is in your corpus. Use the 'table(x$topic)' command. Here x is your dfm.
+
+```{r}
+dfm_eurydice$topic <- topics(tmod_slda)
+
+table(dfm_eurydice$topic)
+
+```
+
+You can attach your topics as a new variable to your data frame (the data before you make it a corpus). 
+
+1. Transform the topics to be a data frame using the topics <- as.data.frame(topics(x)) command in which x is your topic model. 
+2. Attach topics to original data frame using the cbind function
+
+```{r}
+
+topics <- as.data.frame(topics(tmod_slda))
+eurydice_db <- cbind(eurydice, topics)
+
+```
+
+
+Plot
+```{r}
+
+ggplot(eurydice_db, aes(x = `topics(tmod_slda)`, y = country, colour = `topics(tmod_slda)`)) + geom_point() + 
+  labs(x = "Topic", y = "Country") +
+  ggtitle("Distribution of topics over countries")
+
+```
+
+A better solution would be to work with topic probabilities or to visualise the percentage of documents belonging to one topic (see below). Yet, since the data is not well explained through the dictionaries, the findings are of little value to interpret. Instead we will now focus on better data sets for this type of analysis, e.g. the UN General Assembly Corpus.
+
+```{r}
+
+eurydice_db %>% 
+  count(country, topic = `topics(tmod_slda)`) %>% 
+  ggplot(aes(x = country, y = n, fill = topic)) +
+  geom_col(position = "fill") + 
+  scale_y_continuous(labels = scales::percent) +
+  labs(title = "Share of topics within each country",
+       x = NULL, y = "Percent of documents") +
+  coord_flip() +
+  theme_minimal()
+
+```

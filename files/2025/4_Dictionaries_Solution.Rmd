@@ -1,0 +1,133 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(quanteda)
+library(quanteda.textstats)
+```
+
+# First, we need to get out data ready for analysis
+## Load data, create corpus, tokenize, create dfm
+I use the transcript of the presidential election debate between Trump and Biden and you should too. If you feel very confident already and have another corpus at hand, you can use that one too. 
+
+## Pre-Process data: 
+1. Removing non-text: tokens(your_corpus,  remove_punct=T,  remove_numbers=T, remove_symbols=T) (can already be done at stage of tokenization)
+2. Remove uninformative text: Just remove the stopwords from your dfm. Do not use the trim() function before conducting a dictionary analysis
+3. Unite features that share a common meaning stemming
+```{r}
+debate_data <- read.csv("C:/Users/ThinkPad/OneDrive - Istituto Universitario Europeo/Promotion/8. Teaching/2025 Teaching CTA in Marburg/Code/us_election_2020_1st_presidential_debate.csv")
+
+corp_debate <- corpus(debate_data)
+
+toks_debate <- tokens(corp_debate,  remove_punct=T,  remove_numbers=T, remove_symbols=T)
+dfm_debate <- dfm(toks_debate)
+dfm_debate <- dfm_remove(dfm_debate,stopwords("en")) 
+dfm_debate <- dfm_wordstem(dfm_debate,"en")
+
+
+
+
+```
+
+# Next we load a dictionary
+1. Download dictionary "english.yml" from ILIAS and load it into the environment with the dictionary() function. You find the code below. Make sure the dictionary is saved in the working directory. Make sure with the getwd() function and use the setwd() function if necessary.
+2. Get a glimpse of the dictionary content by typing in its name.
+3. Apply the dictionary at dfm level. What output do we get? Use the following code and replace x. x <- dfm_lookup(x,newsmap_dict)
+4. You can inspect specific snippets of the reuslts. Type in the name you gave the results in the last step, then use these brackets [] and include ranges you want to inspect. 
+Example:  x[610:615,111:119]
+
+
+
+```{r}
+getwd()
+
+newsmap_dict <- dictionary(file = "english.yml",
+                           format = "YAML")
+newsmap_dict
+
+dict_dfm_results <- dfm_lookup(dfm_debate,newsmap_dict)
+dict_dfm_results[610:615,111:119]
+
+```
+
+
+# Lets organise the results by using the 'textstat_frequency()' function. 
+1. Type in the name you gave the results of the dictionary anlysis and apply the textstat_frequency() function with a loop.
+Code: 'x %>% textstat_frequency()'
+2. Interpret the findings. What do they mean?
+
+```{r}
+dict_dfm_results %>% textstat_frequency()
+```
+
+# Lets look at the difference applying a dictioanry to tokens or a dfm
+1. First apply the dictionary to the dfm. Use the code 'x %>% dfm_lookup(newsmap_dict) %>%  textstat_frequency()'. insert your document-feature matrix instead of x.
+2. Now apply the dictionary to the tokens object you used to create the dfm. Use 'x %>% tokens_lookup(newsmap_dict) %>% dfm() %>% textstat_frequency()'. Now x is your tokens object.
+3. How do the results differ? Why do you think they differ?
+
+```{r}
+dfm_debate %>% dfm_lookup(newsmap_dict) %>% 
+  textstat_frequency()
+
+toks_debate %>% tokens_lookup(newsmap_dict) %>% 
+  dfm() %>% textstat_frequency()
+
+```
+# Dictionary Levels
+## Dictionaries sometimes have levels. The newsmap dictionary we use has three levels: Continents, regions and countries.
+
+1. Use the dfm_lookup() command and specify that you are interested in level 1 (e.g. 'levels=1')
+
+2. Try out the other two levels 2 and 3. Which one would you find most interesting to understand the geographical focus of the candidates?
+
+
+```{r}
+dfm_debate %>% dfm_lookup(newsmap_dict, levels = 2) %>% 
+  textstat_frequency()
+
+```
+
+
+# Apply dictionaries by group
+## Lets analyse the debate by speaker. The question we might answer here is whether the candidates have a different gerograhical focus.
+
+You can specify the group in the 'textstat_frequency()' command. Use the following code: x %>% dfm_lookup(newsmap_dict, levels = 1) %>%
+  textstat_frequency(groups=speaker)
+
+
+```{r}
+dfm_debate %>% dfm_lookup(newsmap_dict, levels = 1) %>%
+  textstat_frequency(groups=speaker)
+
+```
+
+# Dictionary Creation
+## You can also create your own dictionary. It should be as exhaustive and unambiguous as possible.
+
+1. Take a moment to think about a concept that you are interested in and that could appear in the presidential debate.
+
+2. Use the 'dictionary()' command. In the () you can specifiy a list of topics or concepts you want to analyse.
+
+Example: x <- dictionary(list(x=c("x","x","x"))) or if you want to specify several concepts you can compare (more interesting): x <- dictionary(list(x=c("x","x","x"),x=c("x","x")))
+
+
+```{r}
+education_dictionary <- dictionary(list(higher_education=c("universit*","higher education","professor*"),school_education=c("school*","teache*")))
+education <- dfm_lookup(dfm_debate,education_dictionary)
+education %>% textstat_frequency()
+
+```
+
+# Let's work with a bigger and more complex data set.
+
+We analyse the descriptions of European education systems we have worked with last week (eurydice). Your task is to run a dictionary analysis for one of the theoretical concepts we have learned about. Which countries discusses the social implications of their education system? Which ones focus on economic efficiency? Which countries emphasise higher education and which ones vocational education or primary and secondary education?
+
+1. Load the eurydice data and get it ready to be analysed
+2. Create a dictionary that measures a concept connected to education systems
+3. Run the dictionary analysis and interpret the results
+
+```{r}
+
+
+```
