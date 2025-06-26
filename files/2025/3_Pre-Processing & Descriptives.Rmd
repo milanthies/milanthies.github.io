@@ -1,0 +1,301 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Setup and Pre-Processing
+
+## Working Directory
+
+Before we start find the working directory (a folder in which RStudio stores its output)
+
+You can also set a new working directory with the setwd() function if you are not happy with the selected working directory. Just copy the path to a folder you like into the brackets in quotation marks and change all \ to /.
+
+Example: setwd("C:/Users/mi.../Data & Scripts")
+
+```{r}
+getwd()
+```
+
+## Installing Packages
+
+Next you install the packages you might need and load those you use (through the library function).
+
+```{r}
+packages <- c("tidyverse","quanteda","quanteda.textstats",
+"quanteda.textplots","quanteda.textmodels","readtext","rmarkdown","knitr")
+install.packages(packages)
+
+library(tidyverse)
+library(quanteda)
+library(quanteda.textmodels)
+library(quanteda.textplots)
+library(quanteda.textstats)
+library(readtext)
+```
+
+## Working with text: Creating objects, creating a corpus 
+
+Now we are ready to create objects to work with. Get the "eurydice" file from ILIAS. Copy the path to the RDS document "eurydice" and use the readRDS() function to import it into the environment. Create a new object for the corpus that only includes the features of the RDS imported. Use the corpus() function.
+
+Other data formats can be imported with different commands such as readtext() or readcsv()
+
+```{r}
+
+
+```
+
+## Tokenization
+
+At word, sentence or character level. We will tokenize at word level and store tokenized text in new object. Try out how tokenization as sentence or character level affects the representation of the text.
+
+```{r}
+tokens(x,"word")
+tokens(x ,"sentence")
+tokens(x,"character")
+systems_toks <- tokens(x)
+
+```
+
+## Document-Feature-Matrix
+
+Create a document-feature-matrix. Store it in the environment.
+
+```{r}
+
+
+```
+
+## Key words in context
+
+Before we start pre-processing we can use the "key words in context" to understand how words are used in the texts.
+
+1. Education
+```{r}
+kwic(systems_toks, "education",window=4)
+```
+
+2. Party
+```{r}
+
+
+```
+
+3. University
+```{r}
+
+
+```
+
+4. Any other key word you find interesting
+```{r}
+
+
+```
+
+
+# Pre-processing
+
+Let's start pre-processing to remove features that are not text (1), to remove uninformative features (2), and to unite features that should be understood as one (3).
+
+
+## Let's first understand the dfm we have created through some quick operations
+
+1. Number of tokens per document
+```{r}
+ntoken(x) %>% head()
+```
+
+2. The number of features in our dfm. use the function nfeat()
+```{r}
+
+
+```
+
+3. The top features before pre-processing (run this again after pre-prosessing). You know the function already.
+```{r}
+
+```
+
+4. The number of documents in our dfm. Use the ndoc() function.
+```{r}
+
+```
+
+5. The frequency of features in chronological order. Use a look to only look the the head.
+```{r}
+featfreq(x) %>% head()
+```
+
+### Pre-processing step 1: Removing non-text
+```{r}
+# To compare swiftly: How many features do we have before removing non-text?
+nfeat(x)
+
+# Now we remove punctuation, numbers and symbols
+x <- tokens(x,  remove_punct=T,
+  remove_numbers=T, remove_symbols=T)
+x <- dfm(x)
+
+# How many features does our dfm hold now? Much less!
+nfeat(x)
+
+```
+
+### Pre-processing step 2: Removing uninformative text
+```{r}
+# Texts often contain words that are confounding the analysis. They are also called stopwords. See a list of English language stopwords here:
+stopwords("en")
+
+#Let's remove them.
+x <- dfm_remove(x,stopwords("en")) 
+nfeat(x)
+
+
+#We can also remove the stopwords in other languages. Do this for German (stopwords("de"))
+
+
+```
+
+We can also trim texts to make sure we exclude words that appear too often per document to be relevant (for example the name of the author of the document might appear on every page) or words that appear to few times to matter.
+
+We will remove features that appear less then 50 times in total, in less than 50 out of our 4465 documents or more than 500 times. We include the verbose functions to see how many features were removed.
+
+```{r}
+dfm_trim(x,min_termfreq = x,
+    	min_docfreq = x,
+    	max_termfreq = x, verbose = T)
+```
+
+Which features would you remove? Decide yourself what to keep and what to remove. First create the untrimemd dfm from the toks object, then remove stopwords again and then run the dfm_trim function according to what you think helps.
+```{r}
+
+
+```
+
+### Pre-processing step 3: Uniting features that share a common meaning
+
+If we reduce the features to their wordstem, we unite words with the same meaning. E.g. "systems" and "system" or "programm" and "programme".Use the function dfm_wordstem(x, "en"). Find out how many features are left.
+```{r}
+
+```
+
+### Adding docvars to the dfm
+
+Add the variables "country" and "chapter" from the original data set to the dfm you have saved in the environment. This will be useful to compare between different groups.
+
+```{r}
+
+docvars(x, "country") <- systems$country
+docvars(x, "chapter") <- systems$chapter
+
+```
+
+
+### Advanced Transformations
+
+If you would learn how to better manipulate text data these comments will be useful for you.
+1. Create a subset of your data set based on docvars (country, year,...). You choose which cases will be dropped: dfm_subset(dfm,docvar!="value") or kept dfm_subset(dfm,docvar=="value").
+
+2. You can group documents based on docvars: dfm_group(dfm,x)
+
+
+## Now you:
+
+Group your the dfm by country. Then group them by chapter
+
+```{r}
+
+
+```
+
+Now create a subset that does not include Germany [dfm_subset(dfm,docvar!="value")] and one that only includes Germany dfm_subset(dfm,docvar=="value"). How many documents do these subsets contain?
+
+```{r}
+
+```
+
+
+# Descriptive Analysis
+
+Let's get started on the analysis. First we will look at the absolute frequency of words through topfeatures and wordclouds, then at the relative word frequency through keywords (= words that are very frequent in one group of texts compared to the overall corpus).
+
+## Topfeatures: Absolute frequency
+
+How have the topfeatures changed after pre-processing? What can we learn here? Use the topfeatures() function.
+```{r}
+
+
+```
+
+## Wordclouds: Absolute frequency
+
+You can visualize your finding through a wordcloud. You can choose the amount of words visible.You can also subset the dfm to analyse specific groups of texts. How do Germany and the overall corpus differ? Use the textplot_wordcloud(x, max_words = x) function for the overall dfm as well as a subset only consisting og the texts on Germany.
+
+```{r}
+
+
+```
+
+
+## Keywords: Relative frequency
+
+Let's look at the relative word frequency through keywords (= words that are very frequent in one group of texts compared to the overall corpus). You will have to select a group you compare to the overall corpus. Try this out for different countries. Try to interpret the results
+```{r}
+keyness <- dfm_group(dfm,country) %>%
+ textstat_keyness("x")
+
+head(keyness)
+
+keyness %>%
+ textplot_keyness()
+```
+
+
+## Bonus: Readability
+
+For the analysis of some texts it is helpful to analyse the quality of text. There are different measures to do it. One way to do it is to find readability scores. Use the "textstat_readability()" function. Only look at the readability of some documents using the head function.
+
+```{r}
+
+
+```
+
+
+
+# Your turn: Write the code yourself
+
+Now work with a new corpus and go through the whole workflow. For example you could download a corpus that includes parliamentary speeches from a country whose language you speak here: (https://dataverse.harvard.edu/dataverse/ParlSpeech).
+
+
+## Task 1
+
+Try to find out in which context the concept of "learning", "education" and "knowledge" are used. Use the keyword in context function. Write a short interpretation of the results.
+
+```{r}
+
+
+```
+
+
+## Task 2
+
+Now find out what different speakers emphasize (if you are working with parliamentary speeches). If you are working with other data think about what question you could answer with the keyness statistics. Write a short interpretation of the results.
+
+
+```{r}
+
+
+
+```
+
+
+## Task 3
+
+Now create word clouds for different subsets of the dfm (countries, speakers, etc). Write a short interpretation of the results.
+
+```{r}
+
+
+```
+
+

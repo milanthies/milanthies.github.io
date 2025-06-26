@@ -1,0 +1,37 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+Instead of writing a normal R script, we will work in R Markdown. Markdown is a simple formatting syntax creating HTML, PDF, and MS Word documents. Further information: <http://rmarkdown.rstudio.com>.
+
+Why do we work in Markdown? It allows you to see exactly which step of your code produced which output. I highly recommend working in Markdown when you are doing computational text analysis.
+
+You can embed R code in Markdown by typing 
+"```{r}" before the code and "```" right after it. 
+
+Here is an example of an R code that prints the text "Let's go".
+
+```{r}
+print("Let's go")
+```
+
+### Some general recommendations
+
+1. When you want to generate a document from your code you can simply click the **Knit** button. The document will include the content you have created as well as any output of embedded R code.
+
+2. If you cannot knit a file, you can try deactivating the execution of a specific chink of code that is responsible for the error message by starting the chunk of code with "```{r, eval=FALSE}".
+
+For example
+
+```{r, eval=FALSE}
+print("Test")
+```
+3. Make sure that all packages or data you require in a specific part of code are loaded. 
+
+4. Always run the chunks of code one after anohter chronologically. Otherwise you might encounter errors such as not having loaded a package or data.
+
+### And now you: create a new chunk of code including any operation you want. Then knit this file.
+
+

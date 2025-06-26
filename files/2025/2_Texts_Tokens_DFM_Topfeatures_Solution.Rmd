@@ -1,0 +1,65 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## The ABC of Computational Text Analysis
+
+Before we start we load and potentially install the packages we will use.
+```{r}
+install.packages("quanteda")
+library(quanteda)
+```
+
+
+Step 1: We first need a text.
+```{r}
+seminar_description <- "Politics is about conflict and cooperation between societal groups. Harold Lasswell once defined it as “who gets what, when, how?”. Actors in the political arena, be it politicians, lobbyists, or mass movements, engage in (distributional) conflicts through language — be it spoken out loud in speeches, dialogues, and protest chants, or written down in position papers, protocols, and regulations. Throughout the seminar, students will learn how to use computational methods to explore the traces of conflict and cooperation preceding political change.We will focus on a policy field that not only affects every university student personally but also one that has been at the forefront of global change: Education. Over the past century, education has expanded from being a privilege of the few to an almost universal and global experience. In Europe, this trend is now increasingly leading to educational upgrading and a massive expansion of higher education. But how has this quiet revolution come about? And what are the central conflicts of educational governance today? The seminar is organized in three stages of the learning process. First, students will learn about the foundations of text-as-data in political science, as well as central theories of education politics. Further, they will study how to manually analyze texts without computational assistance. Next, we will focus on the methods of computational text analysis. Students will learn about the theoretical underpinnings of computational text analysis as well as the use of text-as-data methods through hands-on exercises using the R statistical programming language. We will also discuss recent examples of empirical research using computational text analysis. Last but not least, students will apply the learned methods in an in-class project. Small groups of students will be provided with textual data on a policy process and subsequently implement one or several of the techniques learned throughout the seminar"
+
+```
+
+### Note how the test is assigned a name through stateing the name, followed by "<-", and then including the text framed by "".
+
+
+Step 2: We need to separate the text into its features.To safe the list of features (tokens) we can assign it an own name so we can work with it in further steps.
+```{r}
+
+seminar_toks <- tokens(seminar_description)
+
+tokens(seminar_description)
+
+```
+
+
+Step 3: We can organise the features in a document-feature-matrix (dfm) which will also give us the frequency of each feature. 
+```{r}
+seminar_dfm <- dfm(seminar_toks)
+
+dfm(seminar_toks)
+```
+
+
+Step 4: We can learn about the most used features using the **topfeatures** function drawing on the document-feature-matrix we have created. 
+```{r}
+topfeatures(seminar_dfm)
+```
+Alternative step 4: We can also combine several steps by using the "%>%" connector. Here we create a dfm from the tokens we have created (list of features [= mostly words]) and then we also directly ask it to print the topfeatures (= the most frequent features).
+```{r}
+dfm(seminar_toks) %>% topfeatures()
+
+```
+
+
+This analysis ususally includes several texts.
+```{r}
+objectives <- c(" Theoretical Foundations: The course is designed as an introduction to computational text analysis. Students will: I. Learn about the theoretical underpinnings of text-as-data approaches and their relevance in social and political science research. II. Explore the role of texts as manifestations of political conflict and cooperation", "Practical Application: III. Develop practical skills in implementing text-as-data methods using the R statistical programming language through hands-on exercises and in-class projects", "Empirical Insights: IV. Learn about the global process of educational expansion and understand how current political conflicts shape education policies")
+```
+
+
+### And now you: Conduct steps 2-4 on the "objectives" text
+```{r}
+tokens(objectives)
+dfm(objectives) 
+dfm(objectives) %>% topfeatures()
+```
+
+
