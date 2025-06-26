@@ -20,9 +20,18 @@ In this seminar, we will explore the exciting field of computational text analys
 **Syllabus**
 [📄 Download the syllabus](files/2025/25_cta_syllabus-mt.pdf)
 
-**Slides**
+**Slides** 
+[📊 Slides Day 1](files/2025/Intro to CTA - Day 1.pdf)
+[📊 Slides Day 2](files/2025/Intro to CTA - Day 2.pdf)
+[📊 Slides Day 3](files/2025/Intro to CTA - Day 3.pdf)
+[📊 Slides Day 4](files/2025/Intro to CTA - Day 4.pdf)
 
 **Do-files**
+[💻 Script 1 – RMarkdown](files/2025/1_RMarkdown.Rmd)  
+[💻 Script 2 – The ABC of Computational Text Analysis](files/2025/2_Texts_Tokens_DFM_Topfeatures.Rmd)
+[💻 Script 3 – Pre-Processing and Descriptives](files/2025/3_Pre-Processing & Descriptives.Rmd)
+[💻 Script 4 – Dictionaries](files/2025/4_Dictionaries.Rmd)
+[💻 Script 5 – Topic Models](files/2025/5_Topic Models.Rmd)
 
 **Solutions**
 
