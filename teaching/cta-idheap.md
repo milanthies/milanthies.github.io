@@ -13,9 +13,7 @@ Instructor: Milan Thies ([milan.thies@unil.ch](mailto:milan.thies@unil.ch))
 
 ## About the course
 
-With vast amounts of administrative, legislative, political and news texts available, computational text analysis (text as data) has gained traction in social science research. This two-day workshop introduces PhD researchers to computational text analysis from a public policy and public administration perspective.
-
-Whether you study policies, politics, economies, organisations or institutions, texts are traces of societal change and conflict. The workshop is hands-on: in exercises with R and the quanteda package, you implement methods from dictionaries to topic models, and you apply them to texts from your own research.
+With vast amounts of administrative, legislative, political and news texts available, computational text analysis has gained traction in social science research. This two-day workshop introduces PhD researchers to computational text analysis from a public policy and public administration perspective. The workshop is hands-on: in exercises with R and the quanteda package, you implement methods from dictionaries to topic models. At the end of the seminar, you apply them to texts from your own research.
 
 ## Objectives
 
@@ -30,21 +28,32 @@ Whether you study policies, politics, economies, organisations or institutions, 
 
 ## Schedule
 
-### Day 1: Foundations & first analyses
-
-1. Finding and selecting the right texts for analysis / Texts as Traces of Political Conflict and Policy Change
-2. A Newcomer's Guide to Computational Text Analysis
-3. Working with R: Introduction to R & Quanteda
-4. Workflow & Descriptive Analyses
-5. Word Counts and Dictionaries
-6. Selecting Text for Your Mini-Project
-
-### Day 2: Text-as-data methods & application
-
-1. Word Frequencies: How Simple Methods Can Trump Complex Ones (Martin 2018)
-2. Supervised and Unsupervised Machine Learning: Focus on Topic Modelling
-3. In-Class Project: Applied Computational Text Analysis
-4. Pitching your projects
+<div class="schedule">
+  <div class="day-card">
+    <div class="day-label">Day 1</div>
+    <h3>Foundations &amp; first analyses</h3>
+    <div class="day-meta">Tuesday 10 November · Room 201 · <span style="white-space:nowrap">09:30–17:30</span></div>
+    <ol class="sessions">
+    <li><span class="num">01</span><span>Finding and selecting the right texts for analysis / Texts as Traces of Political Conflict and Policy Change</span></li>
+    <li><span class="num">02</span><span>A Newcomer’s Guide to Computational Text Analysis</span></li>
+    <li><span class="num">03</span><span>Working with R: Introduction to R &amp; Quanteda</span></li>
+    <li><span class="num">04</span><span>Workflow &amp; Descriptive Analyses</span></li>
+    <li><span class="num">05</span><span>Word Counts and Dictionaries</span></li>
+    <li><span class="num">06</span><span>Selecting Text for Your Mini-Project</span></li>
+    </ol>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Day 2</div>
+    <h3>Text-as-data methods &amp; application</h3>
+    <div class="day-meta">Wednesday 11 November · Room 003 · <span style="white-space:nowrap">09:30–17:30</span></div>
+    <ol class="sessions">
+    <li><span class="num">01</span><span>Word Frequencies: How Simple Methods Can Trump Complex Ones (Martin 2018)</span></li>
+    <li><span class="num">02</span><span>Supervised and Unsupervised Machine Learning: Focus on Topic Modelling</span></li>
+    <li><span class="num">03</span><span>In-Class Project: Applied Computational Text Analysis</span></li>
+    <li><span class="num">04</span><span>Pitching your projects</span></li>
+    </ol>
+  </div>
+</div>
 
 ## Materials
 

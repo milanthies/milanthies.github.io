@@ -16,8 +16,6 @@ permalink: /research/
 
 **Alvariño, M. & Thies, M.** (2024). Conviction or Consent? Tracing the Influence of Coalition Partners on Family Policy under Centre-Right Ministers. *Government & Opposition*. <https://doi.org/10.1017/gov.2024.25> (Original article)
 
-**Thies, M.** (2024). Collective skill formation in the knowledge economy. By Giuliano Bonoli and Patrick Emmenegger (Eds.), Oxford: Oxford University Press, 2022. ISBN: 9780192866257. *Social Policy & Administration*, 58: 205–206. <https://doi.org/10.1111/spol.12916> (Review article)
-
 In: Hassel, A. & Wegrich, K. (2022). *How to do Public Policy*. Oxford University Press. <https://doi.org/10.1093/oso/9780198747000.001.0001> (Contribution to book)
 
 - School Absenteeism in Berlin. Chapter 5: How to Implement Public Policy (with Julia Melzer & Dustin Koehler).
