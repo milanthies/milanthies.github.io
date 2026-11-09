@@ -13,9 +13,7 @@ Instructor: Milan Thies ([milan.thies@unil.ch](mailto:milan.thies@unil.ch))
 
 ## About the course
 
-With vast amounts of administrative, legislative, political and news texts available, computational text analysis (text as data) has gained traction in social science research. This two-day workshop introduces PhD researchers to computational text analysis from a public policy and public administration perspective.
-
-Whether you study policies, politics, economies, organisations or institutions, texts are traces of societal change and conflict. The workshop is hands-on: in exercises with R and the quanteda package, you implement methods from dictionaries to topic models, and you apply them to texts from your own research.
+With vast amounts of administrative, legislative, political and news texts available, computational text analysis has gained traction in social science research. This two-day workshop introduces PhD researchers to computational text analysis from a public policy and public administration perspective. The workshop is hands-on: in exercises with R and the quanteda package, you implement methods from dictionaries to topic models. At the end of the seminar, you apply them to texts from your own research.
 
 ## Objectives
 
