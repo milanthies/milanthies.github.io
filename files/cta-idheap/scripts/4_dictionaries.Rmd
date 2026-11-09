@@ -46,8 +46,6 @@ dfm_debate_clean <- dfm_remove(x, stopwords("en"))
 
 3. Apply the dictionary at dfm level with dfm_lookup(). Replace x with the name of your cleaned dfm (e.g. dfm_debate_clean). Before "<-" type a new name for the result (e.g. dfm_debate_dict). What output do we get? Each column is now a place from the dictionary (continent, region or country) instead of a word, and the numbers show how often words from this entry occur in each document.
 
-4. You can inspect specific snippets of the results. Type the name of the result from step 3 and then use square brackets [] with the rows and columns you want to see. Example: dfm_debate_dict[1:5, 1:10] shows the first five documents and the first ten columns. Choose other ranges to look at other parts.
-
 
 ```{r}
 getwd()
