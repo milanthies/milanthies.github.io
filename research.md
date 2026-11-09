@@ -12,7 +12,7 @@ permalink: /research/
 
 ## Working papers
 
-**Thies, M.**, [CO-AUTHORS] (working paper). Inclusiveness, Efficiency, or Social Investment? Tracing Four Decades of EU Skills Policy.
+**Thies, M.**, Bonoli, G. & Graf, L. (working paper). Inclusiveness, Efficiency, or Social Investment? Tracing Four Decades of EU Skills Policy.
 
 ## Methods
 

@@ -64,7 +64,7 @@ Download the files into one folder. Right-click and choose "Save link as" if a f
 
 **Slides**
 
-Slides for Day 1 and 2 will be posted here after the workshop.
+Slides for Day 1 and 2 will be added here shortly.
 
 **R scripts** (R Markdown, open in RStudio)
 
@@ -81,7 +81,7 @@ Slides for Day 1 and 2 will be posted here after the workshop.
 | [eurydice.RDS](/files/cta-idheap/data/eurydice.RDS): Eurydice descriptions of European education systems | Scripts 3, 4, 5 | 10 MB |
 | [us_election_2020_1st_presidential_debate.csv](/files/cta-idheap/data/us_election_2020_1st_presidential_debate.csv): first Trump–Biden debate, 2020 | Script 4 | 0.1 MB |
 | [english.yml](/files/cta-idheap/data/english.yml): Newsmap geographical dictionary | Script 4 | 0.01 MB |
-| UN General Debates, 1970–2015: [LINK TO FOLLOW] | Day 2 project | 129 MB |
+| [un-general-debates.csv](https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv): UN General Debate speeches, 1970–2015 (one row per speech: session, year, country, text). In R: `read.csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv")` | Day 2 project | 129 MB |
 | [get_student_datasets.R](/files/cta-idheap/data/get_student_datasets.R): downloads US regulatory comments, Swiss parliament speeches and Swiss party manifestos | Day 2 project | script |
 
 ## Readings
@@ -108,4 +108,4 @@ Slides for Day 1 and 2 will be posted here after the workshop.
 - Thies, M. (2025). State Intervention in Vocational Education: Training for the Digital and Green Transitions. *Regulation & Governance*. <https://doi.org/10.1111/rego.70074>
 - Carstensen, M. B., Ibsen, C. L., Jensen, I. M. N., & Lund-Sørensen, B. (2025). Mapping Green Skills in Collective Skill Formation Systems: A Natural Language Processing Analysis of Danish Vocational Education and Training. *Regulation & Governance*. <https://doi.org/10.1111/rego.70097>
 
-PDFs of the readings are shared with participants through [IDHEAP CHANNEL, e.g. Moodle]; they are not posted here for copyright reasons.
+If you cannot access a reading through your university library, write to me at [milan.thies@unil.ch](mailto:milan.thies@unil.ch).
