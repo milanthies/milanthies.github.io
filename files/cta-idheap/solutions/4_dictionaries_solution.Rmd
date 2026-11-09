@@ -1,0 +1,173 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(quanteda)
+library(quanteda.textstats)
+```
+
+# First, we need to get the data ready for analysis
+
+## Load data, create corpus, tokenize, create dfm
+
+Load the transcript of the first presidential debate between Trump and Biden in 2020 ("us_election_2020_1st_presidential_debate.csv"). Use the read.csv() function. Paste the path to the file in quotation marks into the brackets of read.csv() and make sure all separators in the path are the correct direction (/). Use "<-" and write a name before the arrow to assign a name for the object you are storing (e.g. debate). The file has three columns: speaker, minute and text.
+
+Then create a corpus with the corpus() function. In the bracket, add the name of your data (e.g. debate) and tell the function that the text is in the column "text" (text_field = "text"). The other columns (speaker, minute) are kept as document variables, which we need later.
+
+## Pre-process the data
+1. Create the tokens: use tokens() with the name of your corpus in the brackets and remove punctuation, numbers and symbols (remove_punct = TRUE, remove_numbers = TRUE, remove_symbols = TRUE). Store them in a new object (e.g. toks_debate).
+
+2. Create a dfm with dfm() from your tokens object. Store it in a new object (e.g. dfm_debate).
+
+3. Remove the stopwords from your dfm with dfm_remove(x, stopwords("en")). Replace x with the name of your dfm and store the result in a new object (e.g. dfm_debate_clean).
+
+4. (Optional) Stemming: If you want, you can reduce the words to their stem with dfm_wordstem(x, "en"). Replace x with the name of your dfm and store the result in a new object (e.g. dfm_debate_stem). Stemming unites word forms like "tax", "taxes" and "taxation", which can help if your dictionary contains different forms of a word. But it can also include words with the same wordstem but different meaning. If you stem, apply the dictionary to the stemmed dfm, check the results and compare them with the unstemmed version. Which one works better for your dictionary?
+
+Do not use dfm_trim() before a dictionary analysis, because trimming removes words the dictionary may need.
+
+
+```{r}
+debate <- read.csv("us_election_2020_1st_presidential_debate.csv")
+corpus_debate <- corpus(debate, text_field = "text")
+toks_debate <- tokens(corpus_debate, remove_punct = TRUE, remove_numbers = TRUE, remove_symbols = TRUE)
+dfm_debate <- dfm(toks_debate)
+dfm_debate_clean <- dfm_remove(dfm_debate, stopwords("en"))
+
+# (Optional) Stemming
+dfm_debate_stem <- dfm_wordstem(dfm_debate_clean, "en")
+```
+
+# Next we load a dictionary
+
+1. Get the dictionary "english.yml" from my website and save it in your working directory. Check the working directory with getwd() and change it with setwd() if necessary. Load the dictionary into the environment with the dictionary() function. You find the code below. If the file is in your working directory, only the file name is needed. Otherwise paste the full path in quotation marks.
+
+2. Get a glimpse of the dictionary content by typing its name (newsmap_dict) into the console or a new line, without any function.
+
+3. Apply the dictionary at dfm level with dfm_lookup(). Replace x with the name of your cleaned dfm (e.g. dfm_debate_clean). Before "<-" type a new name for the result (e.g. dfm_debate_dict). What output do we get? Each column is now a place from the dictionary (continent, region or country) instead of a word, and the numbers show how often words from this entry occur in each document.
+
+4. You can inspect specific snippets of the results. Type the name of the result from step 3 and then use square brackets [] with the rows and columns you want to see. Example: dfm_debate_dict[1:5, 1:10] shows the first five documents and the first ten columns. Choose other ranges to look at other parts.
+
+
+```{r}
+getwd()
+
+newsmap_dict <- dictionary(file = "english.yml", format = "YAML")
+
+newsmap_dict
+
+dfm_debate_dict <- dfm_lookup(dfm_debate_clean, newsmap_dict)
+
+dfm_debate_dict
+
+dfm_debate_dict[1:5, 1:10]
+```
+# Let's organise the results with the textstat_frequency() function
+
+1. Take the result of the dictionary analysis from the last step (e.g. dfm_debate_dict) and apply the textstat_frequency() function with a pipe (%>%). The pipe passes the object on the left into the function on the right, so nothing goes into the brackets of textstat_frequency(). Replace x with the name of the object in which you stored your result (e.g. dfm_debate_dict). Code: x %>% textstat_frequency()
+
+2. Look at the table. Each row is a dictionary entry (a continent, region or country). The column "frequency" shows how often words from this entry occur in the whole debate, "rank" orders the entries from most to least frequent and "docfreq" shows in how many documents (speech turns) the entry occurs. Interpret the findings: Which regions are mentioned most? What do they tell us about the topics of the debate? Do you see any matches that are surprising?
+
+
+```{r}
+dfm_debate_dict %>% textstat_frequency()
+```
+
+# Let's look at the difference between applying a dictionary to a dfm and to tokens
+
+1. First apply the dictionary to the dfm. Replace x with the name of your cleaned dfm (e.g. dfm_debate_clean). Code: x %>% dfm_lookup(newsmap_dict) %>% textstat_frequency()
+
+2. Now apply the dictionary to the tokens object you used to create the dfm (e.g. toks_debate). Replace x with the name of your tokens object. Code: x %>% tokens_lookup(newsmap_dict) %>% dfm() %>% textstat_frequency()
+
+3. Compare the two tables. How do the results differ? Why do you think they differ? Hint: think about what a dfm contains and what tokens contain. Think about dictionary entries that consist of more than one word.
+
+```{r}
+dfm_debate_clean %>% dfm_lookup(newsmap_dict) %>% textstat_frequency()
+
+toks_debate %>% tokens_lookup(newsmap_dict) %>% dfm() %>% textstat_frequency()
+```
+
+
+# Dictionary levels
+
+Dictionaries sometimes have levels. The newsmap dictionary we use has three levels: continents (level 1), regions (level 2) and countries (level 3). By default dfm_lookup() uses all levels at once.
+
+1. Use the dfm_lookup() function and specify that you are interested in level 3 (levels = 3). Replace x with the name of your cleaned dfm (e.g. dfm_debate_clean). Add textstat_frequency() with a pipe to see the results as a table. Nothing goes into the brackets of textstat_frequency().
+
+2. Try out the other two levels (levels = 2 and levels = 3) by changing the number.
+
+3. Compare the three tables. Which level would you find most interesting to understand the geographical focus of the candidates? Why?
+
+```{r}
+dfm_debate_clean %>% dfm_lookup(newsmap_dict, levels = 1) %>% textstat_frequency()
+
+dfm_debate_clean %>% dfm_lookup(newsmap_dict, levels = 2) %>% textstat_frequency()
+
+dfm_debate_clean %>% dfm_lookup(newsmap_dict, levels = 3) %>% textstat_frequency()
+```
+
+# Apply dictionaries by group
+
+Let's analyse the debate by speaker. The question we might answer here is whether the candidates have a different geographical focus.
+
+You can specify the group in the textstat_frequency() function with groups = speaker. "speaker" is the name of a document variable in our data, so it is written without quotation marks. Replace x with the name of your cleaned dfm (e.g. dfm_debate_clean). Quick information: Chris Wallance is the moderator.
+
+Look at the table: the column "group" tells you which speaker the frequency belongs to. Which places does each candidate mention most? Is the geographical focus different? Be careful in the interpretation: the moderator is also a speaker in the data, and the candidates did not speak equally long. Do you think the absolute frequencies are comparable?
+
+```{r}
+dfm_debate_clean %>% dfm_lookup(newsmap_dict, levels = 1) %>%
+  textstat_frequency(groups = speaker)
+```
+
+
+# Dictionary creation
+
+You can also create your own dictionary. It should be as exhaustive and unambiguous as possible: it should contain all words that express your concept, and no words that mean something else.
+
+1. Take a moment to think about a concept that you are interested in and that could appear in the presidential debate. If you want to compare several concepts, think of two or three.
+
+2. Use the dictionary() function. In the brackets you specify a list (list()) of concepts. Each concept has a name of your choice (without quotation marks), then "=", then the words that belong to it in c() and in quotation marks. Example with an unrelated concept: my_dict <- dictionary(list(sport = c("football", "baseball", "game*"), music = c("song*", "concert", "band*"))). The * is a wildcard: "game*" finds "game", "games" and "gamer". Use it if you did not stem your text.
+
+3. Apply your dictionary to your cleaned dfm with dfm_lookup() and look at the results by speaker with textstat_frequency(groups = speaker). Replace x with the name of your dfm and my_dict with the name of your dictionary.
+
+4. Look at the results. Does your dictionary find what you wanted? Which words might be missing or wrong?
+
+```{r}
+my_dict <- dictionary(list(economy = c("econom*", "job*", "tax*", "busines*", "unemploy*", "wage*"),
+                           health = c("health*", "covid*", "virus", "vaccin*", "mask*", "hospital*", "pandemic", "obamacare")))
+
+dfm_debate_clean %>% dfm_lookup(my_dict) %>% textstat_frequency(groups = speaker)
+```
+
+
+# Let's work with a bigger data set
+
+We now go back to the analysis of the descriptions of European education systems that we worked with earlier in this seminar (= eurydice). Your task is to run a dictionary analysis for one theoretical concept you can think of. For example: Which countries discuss inequalities in their education system? Which ones focus on economic value creation? Which countries emphasise higher education, and which ones vocational education or primary and secondary education?
+
+1. Load the eurydice data and get it ready for analysis: import it, create a corpus, tokenize, create a dfm and remove the stopwords. Use the code from the first part of this script and from the last script. Do not use dfm_trim(). Possibly stem the words.
+
+2. Create a dictionary that measures a concept connected to education systems. Think about which words express your concept and use the * wildcard for different word endings. Create at least two concepts so that you can compare them.
+
+3. Run the dictionary analysis with dfm_lookup() and look at the results by country with textstat_frequency(groups = country).
+
+4. Interpret the results: Which countries emphasise which concept? Which words does your dictionary match, and does it find what you wanted? Be careful: documents of different countries differ in length, so absolute frequencies are not directly comparable. If you want to compare countries fairly, you can group the dfm by country (dfm_group(x, groups = country)) and use relative frequencies (dfm_weight(x, scheme = "prop")) before you apply the dictionary.
+
+```{r}
+eurydice <- readRDS("eurydice.RDS")
+corpus_eurydice <- corpus(eurydice)
+toks_eurydice_clean <- tokens(corpus_eurydice, remove_punct = TRUE, remove_numbers = TRUE, remove_symbols = TRUE)
+dfm_eurydice_clean <- dfm(toks_eurydice_clean)
+dfm_eurydice_nostop <- dfm_remove(dfm_eurydice_clean, stopwords("en"))
+
+edu_dict <- dictionary(list(
+  inequality = c("inequalit*", "equality", "equity", "disadvantag*", "inclusi*", "segregat*", "poverty"),
+  economy = c("labour", "employ*", "econom*", "competitiv*", "skill*", "entrepreneur*", "innovat*")))
+
+dfm_eurydice_nostop %>% dfm_lookup(edu_dict) %>% textstat_frequency(groups = country)
+
+# Fair comparison: one document per country and relative frequencies
+dfm_grouped <- dfm_group(dfm_eurydice_nostop, groups = country)
+dfm_grouped_prop <- dfm_weight(dfm_grouped, scheme = "prop")
+dfm_grouped_prop %>% dfm_lookup(edu_dict) %>% textstat_frequency(groups = country)
+```
+

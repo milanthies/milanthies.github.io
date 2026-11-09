@@ -49,17 +49,18 @@ dfm(seminar_toks) %>% topfeatures()
 ```
 
 
-This analysis ususally includes several texts.
+This analysis usually include several texts.
 ```{r}
-objectives <- c(" Theoretical Foundations: The course is designed as an introduction to computational text analysis. Students will: I. Learn about the theoretical underpinnings of text-as-data approaches and their relevance in social and political science research. II. Explore the role of texts as manifestations of political conflict and cooperation", "Practical Application: III. Develop practical skills in implementing text-as-data methods using the R statistical programming language through hands-on exercises and in-class projects", "Empirical Insights: IV. Learn about the global process of educational expansion and understand how current political conflicts shape education policies")
+grimmer <- c(" Language is everywhere in social life. Laws are written down, beliefs are articulated, and historical events are reported in words. Citizens complain to their representatives, organizers call people to protest, and advertisers try to sell products, all through language. Yet quantitative social science used texts surprisingly little until recently.The reason was practical. Collecting and transcribing everything people had written or said was hard. Reading collections with billions of words was impossible for any team, and sorting such texts into meaningful categories or measuring concepts in them seemed out of reach. So texts were used in small datasets or by large, well-funded teams. This has changed dramatically. The internet made texts much easier to acquire, computing power grew until a laptop could handle what once required a server, and methods were developed first in computer science and computational linguistics, then in the social sciences and humanities. Today it is common to see studies built on millions of social media messages or more books than any physical library holds. Most of these methods come from computer science, which brings a risk. Computer scientists are often interested in information retrieval, recommendation systems or benchmark tasks. Social scientists use text as data to learn about phenomena such as politics, literature or history. If we copy the default practices for selecting, evaluating and validating models from computer science without reflection, we can end up with unintended consequences. The book therefore treats text as data for social science tasks. It organizes these around four core tasks. Discovery is creating new concepts or ways of organizing the world. Measurement connects concepts to data, so we can describe how common something is. Causal inference uses such measures to ask what effect an intervention had. Prediction uses them to forecast values in the future. The usual machine learning distinction between supervised and unsupervised methods can obscure how these tools serve such tasks. The authors also stress that research should be sequential, iterative and inductive. We refine concepts and measurements as we see new data, confirm earlier results, test new hypotheses and generate hypotheses for future work. This happens across a community of researchers, not within a single study.A central example is Amy Catalinac’s work on Japan. She asked why politicians paid more attention to national security after 1997. She argued that a 1994 electoral reform changed their incentives: under the old multi-member districts, candidates from the same party competed by delivering local benefits, whereas the new system rewarded party platforms and national issues. She transcribed 7,497 candidate manifestos by hand, used a topic model to discover what they discussed, validated the topics by reading them and checking them against known facts about Japanese politics, and then tested her causal claim while ruling out alternative explanations.The lesson is that for social scientists, validation means checking whether a model’s output measures a concept well, not whether it predicts unseen words.")
+
 ```
 
 
 ### And now you: Conduct steps 2-4 on the "objectives" text
 ```{r}
-tokens(objectives)
-dfm(objectives) 
-dfm(objectives) %>% topfeatures()
+toks_grimmer <- tokens(grimmer)
+dfm_grimmer <- dfm(toks_grimmer) 
+dfm(toks_grimmer) %>% topfeatures()
 ```
 
 
