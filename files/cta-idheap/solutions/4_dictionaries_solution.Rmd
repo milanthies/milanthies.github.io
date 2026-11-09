@@ -46,7 +46,6 @@ dfm_debate_stem <- dfm_wordstem(dfm_debate_clean, "en")
 
 3. Apply the dictionary at dfm level with dfm_lookup(). Replace x with the name of your cleaned dfm (e.g. dfm_debate_clean). Before "<-" type a new name for the result (e.g. dfm_debate_dict). What output do we get? Each column is now a place from the dictionary (continent, region or country) instead of a word, and the numbers show how often words from this entry occur in each document.
 
-4. You can inspect specific snippets of the results. Type the name of the result from step 3 and then use square brackets [] with the rows and columns you want to see. Example: dfm_debate_dict[1:5, 1:10] shows the first five documents and the first ten columns. Choose other ranges to look at other parts.
 
 
 ```{r}
@@ -60,8 +59,8 @@ dfm_debate_dict <- dfm_lookup(dfm_debate_clean, newsmap_dict)
 
 dfm_debate_dict
 
-dfm_debate_dict[1:5, 1:10]
 ```
+
 # Let's organise the results with the textstat_frequency() function
 
 1. Take the result of the dictionary analysis from the last step (e.g. dfm_debate_dict) and apply the textstat_frequency() function with a pipe (%>%). The pipe passes the object on the left into the function on the right, so nothing goes into the brackets of textstat_frequency(). Replace x with the name of the object in which you stored your result (e.g. dfm_debate_dict). Code: x %>% textstat_frequency()
@@ -165,9 +164,5 @@ edu_dict <- dictionary(list(
 
 dfm_eurydice_nostop %>% dfm_lookup(edu_dict) %>% textstat_frequency(groups = country)
 
-# Fair comparison: one document per country and relative frequencies
-dfm_grouped <- dfm_group(dfm_eurydice_nostop, groups = country)
-dfm_grouped_prop <- dfm_weight(dfm_grouped, scheme = "prop")
-dfm_grouped_prop %>% dfm_lookup(edu_dict) %>% textstat_frequency(groups = country)
 ```
 
