@@ -1,0 +1,17 @@
+---
+# This file replaces assets/css/custom.css and _includes/head-custom.html,
+# which Minima 2.5 never loads.
+---
+
+@import "minima";
+
+.site-header { background: #283593; border-top-color: #FFB300; }
+.site-title, .site-title:visited,
+.site-nav .page-link { color: #ffffff !important; }
+.site-nav .page-link:hover { color: #FFB300 !important; text-decoration: none; }
+
+/* Links in the text: indigo, because amber on white is hard to read */
+.page-content a, .page-content a:visited { color: #283593; }
+.page-content a:hover { color: #5c6bc0; }
+
+.avatar { border-radius: 50%; max-width: 180px; }

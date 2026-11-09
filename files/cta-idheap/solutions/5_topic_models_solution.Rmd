@@ -89,7 +89,7 @@ You can run the seeded lda topic model (slda) using the textmodel_seededlda() co
 
 3. Inspect the first 20 terms associated with each topic using the command terms(x, 20). X stands for the name of your model.
 
-### Caution seeded LDA topic models models are not appropriate for every research question or for all available datasets. The analysis below is provided merely to demonstrate the code on an accessible dataset and is not intended for substantive interpretation.
+Caution: Seeded LDA topic models are not suitable for every research question or dataset. The analysis below is offered only to demonstrate the code on an easily accessible corpus and should not be interpreted substantively. Once you are comfortable with the mechanics, I encourage you to apply the method to more appropriate corpora and dictionaries and to follow best-practice guidelines—e.g., Watanabe et al. (2020), “Theory-Driven Analysis of Large Corpora: Semi-supervised Topic Classification of UN General Assembly Speeches.”
 
 ```{r}
 tmod_slda <- textmodel_seededlda(dfm_eurydice, dictionary = dict_PubvPriv)

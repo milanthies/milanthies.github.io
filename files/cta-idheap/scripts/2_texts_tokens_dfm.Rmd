@@ -1,0 +1,63 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## The ABC of Computational Text Analysis
+
+Before we start we load and potentially install the packages we will use. (Install and) load the quanteda package. Type "install.packages("")" to install and then load the package typing "library()". The install.packages function needs parentheses in the bracket the library function does not.
+
+```{r}
+
+
+```
+
+
+Step 1: We first need a text.
+```{r}
+seminar_description <- "With vast amounts of administrative, legislative, political or news texts available, computational text analysis (also known as text-as-data) has gained increasing traction in social science research over the past years. This two-day workshop introduces PhD researchers to computational text analysis methods from a public policy and public administration research perspective. Whether you study policies, politics, economies, organisations, or institutions, texts are critical traces of societal changes and conflicts. This workshop equips you with practical skills to extract meaningful insights from such textual data at scale, moving beyond what manual analysis alone can achieve. The workshop emphasizes hands-on application. Through interactive exercises using R and the quanteda package, you'll learn to implement methods ranging from dictionary-based approaches to machine learning techniques. By the end, you'll be prepared to incorporate computational text analysis into your own research. The seminar is organized in three stages of the learning process. First, participants will learn about the foundations of text-as-data in the social sciences. This includes the role of texts in political science and public administration and the theoretical underpinnings of computational text analysis. Next, we will focus on the methods of computational text analysis. Participants will learn about the use of text-as-data methods through hands-on exercises using the statistical programming language R. We will also discuss recent examples of empirical research using computational text analysis. Last but not least, participants will apply the learned methods to their own research or interests. Participants can either bring their own textual data or use data provided by the instructor and subsequently implement one or several of the techniques learned throughout the seminar. The course is designed as an introduction to computational text analysis, with three objectives. First, theoretical foundations: you will learn about the theoretical underpinnings of text-as-data approaches and their relevance in social science research. Second, practical application: you will develop practical skills in implementing text-as-data methods using the R statistical programming language through hands-on exercises. Third, transfer to your own research: you will apply the learned methods to your own area of research, either by developing a first analysis on data in your field or by critically assessing research using text-as-data in your field. Day 1 covers texts as traces of political conflict and policy change, a newcomer's guide to computational text analysis, getting started with R, quanteda and descriptive analyses, and computational text analysis without machine learning (word counts and dictionaries). Day 2 covers supervised and unsupervised machine learning for text analysis (including topic models and semi-supervised topic models), developing a text-as-data research project, supervised project work, and a final session of presentations, reflection and outlook."
+
+```
+
+### Note how the text is assigned a name through stateing the name, followed by "<-", and then including the text framed by "".
+
+
+Step 2: We need to separate the text into its features.To safe the list of features (tokens) we can assign it an own name so we can work with it in further steps. Use the tokens() function and safe the object in the environment. In the brackets write the name of the text we want to analyse (seminar_description).
+
+```{r}
+
+
+```
+
+
+Step 3: We can organise the features in a document-feature-matrix (dfm) which will also give us the frequency of each feature. Use the dfm() function safe the dfm in the environment.
+```{r}
+
+
+```
+
+
+Step 4: We can learn about the most used features using the **topfeatures** function drawing on the document-feature-matrix we have created. Use the function topfeatures(). In the bracket you add the name of the dfm.
+```{r}
+
+
+```
+Alternative step 4: We can also combine several steps by using the "%>%" connector (aka loop). Here we create a dfm from the tokens we have created (list of features [= mostly words]) and then we also directly ask it to print the topfeatures (= the most frequent features).
+```{r}
+dfm(toks_seminar) %>% topfeatures()
+
+```
+
+
+Let's do this with a vector of texts, which is a summary of chapter 1 of Grimmer et al:
+```{r}
+grimmer <- c(" Language is everywhere in social life. Laws are written down, beliefs are articulated, and historical events are reported in words. Citizens complain to their representatives, organizers call people to protest, and advertisers try to sell products, all through language. Yet quantitative social science used texts surprisingly little until recently.The reason was practical. Collecting and transcribing everything people had written or said was hard. Reading collections with billions of words was impossible for any team, and sorting such texts into meaningful categories or measuring concepts in them seemed out of reach. So texts were used in small datasets or by large, well-funded teams. This has changed dramatically. The internet made texts much easier to acquire, computing power grew until a laptop could handle what once required a server, and methods were developed first in computer science and computational linguistics, then in the social sciences and humanities. Today it is common to see studies built on millions of social media messages or more books than any physical library holds. Most of these methods come from computer science, which brings a risk. Computer scientists are often interested in information retrieval, recommendation systems or benchmark tasks. Social scientists use text as data to learn about phenomena such as politics, literature or history. If we copy the default practices for selecting, evaluating and validating models from computer science without reflection, we can end up with unintended consequences. The book therefore treats text as data for social science tasks. It organizes these around four core tasks. Discovery is creating new concepts or ways of organizing the world. Measurement connects concepts to data, so we can describe how common something is. Causal inference uses such measures to ask what effect an intervention had. Prediction uses them to forecast values in the future. The usual machine learning distinction between supervised and unsupervised methods can obscure how these tools serve such tasks. The authors also stress that research should be sequential, iterative and inductive. We refine concepts and measurements as we see new data, confirm earlier results, test new hypotheses and generate hypotheses for future work. This happens across a community of researchers, not within a single study.A central example is Amy Catalinac’s work on Japan. She asked why politicians paid more attention to national security after 1997. She argued that a 1994 electoral reform changed their incentives: under the old multi-member districts, candidates from the same party competed by delivering local benefits, whereas the new system rewarded party platforms and national issues. She transcribed 7,497 candidate manifestos by hand, used a topic model to discover what they discussed, validated the topics by reading them and checking them against known facts about Japanese politics, and then tested her causal claim while ruling out alternative explanations.The lesson is that for social scientists, validation means checking whether a model’s output measures a concept well, not whether it predicts unseen words.")
+```
+
+
+### And now you: Conduct steps 2-4 on the "grimmer" text
+```{r}
+
+
+```
+
+

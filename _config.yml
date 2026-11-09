@@ -1,19 +1,16 @@
 title: Milan Thies
 description: >-
-  Governance of Education and Skills • Labour Markets • Political Economy • Public Administration
+  Postdoctoral researcher, IDHEAP, University of Lausanne.
+  Governance of education and skills, labour markets, political economy, public administration.
 url: "https://milanthies.github.io"
-theme: minima
+theme: minima            # GitHub Pages uses Minima 2.5.1
 
-# ⬇ Minima-3 settings
-minima:
-  skin: auto          # light during the day, dark when OS is dark  :contentReference[oaicite:0]{index=0}
-  nav_pages:          # what appears in the header bar & in what order  :contentReference[oaicite:1]{index=1}
-    - index.md        # Home
-    - teaching.md     # Teaching
+# Minima 2.5 settings (Minima 3 keys such as skin/nav_pages/social_links are ignored by GitHub Pages)
+email: milan.thies@unil.ch
+github_username: milanthies
+header_pages:           # header menu, in this order
+  - research.md
+  - teaching.md
 
-# Optional social icons (appear top-right)
-minima:
-  #  … keep skin & nav_pages …
-  social_links:
-    - { platform: github,  user_url: "https://github.com/milanthies" }
-    - { platform: email,   user_url: "mailto:milan.thies@eui.eu" }
+exclude:
+  - README.md

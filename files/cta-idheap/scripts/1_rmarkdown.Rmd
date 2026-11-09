@@ -32,6 +32,10 @@ print("Test")
 
 4. Always run the chunks of code one after anohter chronologically. Otherwise you might encounter errors such as not having loaded a package or data.
 
-### And now you: create a new chunk of code including any operation you want. Then knit this file.
+### And now you: create a new chunk of code including any operation you want. First add a new section in the markdown file by copying and pasting "```{r}" in a line and "```" a few lines below. Then add any operation like "print("text you want to type")". Then knit this file.
 
+```{r}
+
+
+```
 
