@@ -91,8 +91,6 @@ Slides for Day 1 and 2 will be added here shortly.
 - Grimmer, J., Roberts, M. E., & Stewart, B. M. (2022). *[Text as Data: A New Framework for Machine Learning and the Social Sciences](https://press.princeton.edu/books/paperback/9780691207551/text-as-data)*. Princeton University Press. Chapter 1.
 - Martin, C. J. (2018). Imagine All the People: Literature, Society, and Cross-National Variation in Education Systems. *World Politics*, 70(3). <https://doi.org/10.1017/S0043887118000023>
 
-**Used in the sessions** (Grimmer, Roberts & Stewart 2022): Ch. 2 Social Science Research and Text Analysis; Ch. 3–4 Selecting Documents; Ch. 5 Bag of Words; Ch. 13 Topic Models; Ch. 16 Word Counting; Ch. 17–19 Supervised Classification; Ch. 28 Conclusion.
-
 **Optional**
 
 - Benoit, K. (2020). Text as data: An overview. In L. Curini & R. Franzese (Eds.), *The SAGE Handbook of Research Methods in Political Science and International Relations*. SAGE. <https://doi.org/10.4135/9781526486387>
