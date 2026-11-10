@@ -1,0 +1,77 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(quanteda)
+library(quanteda.textstats)
+library(quanteda.textplots)
+library(seededlda)
+```
+
+# In-Class Project
+Work on your in-class project below. Simply follow the typical workflow. Have at least one graph to show. At the end you pitch your project in about 2 to 3 minutes: say what your texts and your question are, show your graph and say what you found.
+
+0. Description of the texts and the research question (one or two sentences, no code needed)
+
+My texts:
+
+My research question is:
+
+
+1. Import data, create corpus, tokenize and remove non-words, create dfm, remove stopwords.
+
+Use read.csv() for .csv files and readRDS() for .RDS files. If the file is in your working directory, only the file name is needed. Otherwise paste the full path in quotation marks and make sure all separators in the path are the correct direction (/).
+
+No data of your own? Use one of these files:
+
+- eurydice.RDS (descriptions of European education systems): eurydice <- readRDS("eurydice.RDS")
+- us_election_2020_1st_presidential_debate.csv (first presidential debate Trump vs. Biden, 2020): debate <- read.csv("us_election_2020_1st_presidential_debate.csv")
+- un-general-debates.csv (UN General Debate speeches 1970-2015, large file): un <- read.csv("un-general-debates.csv", encoding = "UTF-8")
+
+
+```{r}
+
+
+
+```
+
+
+2. Possibly advanced transformations (creating subsets etc.)
+
+```{r}
+
+
+
+```
+
+
+3. Descriptive analyses (possibly word frequencies, wordclouds)
+
+```{r}
+
+
+
+```
+
+
+
+4. Potentially advanced analyses (dictionaries, topic models)
+
+```{r}
+
+
+
+```
+
+
+5. Any further analyses
+
+```{r}
+
+
+
+```
+
+What I found:
+
+
