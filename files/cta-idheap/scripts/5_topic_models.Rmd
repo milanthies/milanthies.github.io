@@ -1,0 +1,184 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+packages <- c("tidyverse", "quanteda", "quanteda.textstats", "seededlda")
+install.packages(setdiff(packages, rownames(installed.packages())),
+                 repos = "https://cloud.r-project.org")
+
+library(tidyverse)
+library(quanteda)
+library(quanteda.textstats)
+library(seededlda)
+```
+
+# Topic Models
+
+In this script you run two kinds of topic models: an unsupervised LDA topic model, where the computer finds the topics on its own, and a seeded LDA topic model, where you nudge the model towards topics you define with seed words. The first chunk installs the package "seededlda" (and the other packages) if it is not installed yet.
+
+# First, we need to get the data ready for analysis
+
+## Load data, create corpus, tokenize, create dfm
+
+You know the drill: import the data, create a corpus, tokenize and remove non-text, create a dfm, remove stopwords and possibly stem the words. We work with the eurydice data again. It is larger than the presidential debate and therefore better suited for machine learning.
+
+1. Load the eurydice data with readRDS(). If the file is in your working directory, only the file name is needed ("eurydice.RDS"). Otherwise paste the full path in quotation marks and make sure all separators in the path are the correct direction (/). Store it in an object (e.g. eurydice).
+
+2. Create a corpus with corpus(). Store it in a new object (e.g. corpus_eurydice).
+
+3. Tokensise with tokens() and remove punctuation, numbers and symbols (remove_punct = TRUE, remove_numbers = TRUE, remove_symbols = TRUE). Store them in a new object (e.g. toks_eurydice).
+
+4. Create a dfm with dfm(), remove the stopwords with dfm_remove(x, stopwords("en")) and stem the words with dfm_wordstem(x, "en"). Replace x with the name of your dfm. Store the result in a new object (e.g. dfm_eurydice).
+
+```{r}
+eurydice <- readRDS("x")
+corpus_eurydice <- corpus(x)
+toks_eurydice <- tokens(x, remove_punct = TRUE, remove_numbers = TRUE, remove_symbols = TRUE)
+dfm_eurydice <- dfm(x)
+dfm_eurydice <- dfm_remove(x, stopwords("en"))
+dfm_eurydice <- dfm_wordstem(x, "en")
+
+```
+
+
+# LDA topic modelling (unsupervised)
+
+Now you can run an unsupervised LDA topic model.
+
+1. Use the textmodel_lda() function. In the brackets you define the dfm the model should use and the number of topics (k = x). Both specifications are separated with a comma. Before you run it, assign the model to an object in the environment (e.g. tmod_lda <- textmodel_lda(x, k = x)). Running the model takes a few minutes.
+
+2. What terms are associated with each topic? Use terms(x, 20) to get the top 20 terms for each topic. Replace x with the name of your model. Try to give headlines to the topics. Then interpret the results. What are the advantages and disadvantages of unsupervised topic modelling?
+
+```{r}
+# run the model. This will take time.
+tmod_lda <- textmodel_lda(x, k = x)
+
+# what are the terms associated with each topic?
+terms(x, 20)
+
+```
+
+3. Let's get a list of the prevalent topics of the first 20 documents (texts) with head(topics(x), 20). Replace x with the name of your topic model.
+
+```{r}
+# get prevalent topics of first 20 documents (texts)
+head(topics(x), 20)
+
+```
+
+4. To compare the topic frequency, we first assign the topic as a new document-level variable (docvar). Use x$topic <- topics(y), where x is your dfm and y is your topic model.
+
+5. To compare the frequency of topics, use the table() function: table(x$topic), where x is your dfm to which you have assigned "topic" as a new docvar. The table lists the topics and tells you in how many documents each topic is the most prevalent one.
+
+```{r}
+# assign topic as a new document-level variable
+x$topic <- topics(y)
+
+# cross-table of the topic frequency
+table(x$topic)
+
+```
+
+
+# Seeded LDA topic modelling (semi-supervised)
+
+In seeded LDA, you can predefine topics using a dictionary of "seed words". Before running the model you need to define a dictionary with the dictionary() function you learned in the last script: my_dict <- dictionary(list(a = c("x", "y"), b = c("z"))). *Important*: Define at least two topics, better more. If you stemmed the dfm, the seed words should be word stems or use the * wildcard (e.g. "govern*" finds "govern", "government" and "governance").
+
+1. Define a dictionary with at least two topics (better more topics). Look at it by typing its name.
+
+```{r}
+# define a dictionary
+my_dict <- dictionary(list(x = c("x", "x", "x"), x = c("x", "x", "x")))
+
+my_dict
+
+```
+
+You can run the seeded LDA topic model (slda) with the textmodel_seededlda() function. This takes a few minutes. The code is tmod_slda <- textmodel_seededlda(x, dictionary = y). Before "<-" you write the name of your model (e.g. tmod_slda), x is your dfm and y is the name of your dictionary that provides the seed words. The number of topics is the number of topics in your dictionary.
+
+2. Run the seeded LDA topic model with textmodel_seededlda().
+
+3. Inspect the top 20 terms associated with each topic with terms(x, 20). Replace x with the name of your model.
+
+```{r}
+tmod_slda <- textmodel_seededlda(x, dictionary = y)
+
+terms(x, 20)
+
+```
+
+You can see which topic is prevalent in which document with the topics() function.
+
+4. Check which topics are prevalent in the first 20 documents with head(topics(x), 20). Replace x with the name of your model.
+
+```{r}
+head(topics(x), 20)
+
+```
+
+5. Assign the topic as a new document-level variable (docvar) in your dfm with x$topic <- topics(y). x is your dfm and y is your seeded topic model.
+
+6. Get a cross-table of the topic frequencies to see how prevalent each topic is in your corpus with table(x$topic). Here x is your dfm.
+
+```{r}
+x$topic <- topics(y)
+
+table(x$topic)
+
+```
+
+# Attach the topics to your data
+
+You can attach your topics as a new variable to your data frame (the data before you made it a corpus, e.g. eurydice). Then you can use the other variables (e.g. country) to compare the topics.
+
+1. Transform the topics into a data frame with topics_df <- data.frame(topic = topics(x)), where x is your seeded topic model.
+
+2. Attach the topics to the original data frame with cbind(): eurydice_topics <- cbind(x, topics_df). Replace x with the name of your original data (e.g. eurydice).
+
+```{r}
+topics_df <- data.frame(topic = topics(x))
+eurydice_topics <- cbind(x, topics_df)
+
+```
+
+
+# Plot
+
+Now you can plot your findings. You will notice that the eurydice data is not well suited for simple plots of seeded topics. This plot is only meant to inform your own analysis below, where you can look for a better fit between data and dictionary.
+
+There are many ways to plot topics. The first plot is kept as simple as possible: each point shows that at least one document of a country is classified as this topic. Replace x with the name of the data frame with the topics (e.g. eurydice_topics).
+
+```{r}
+ggplot(x, aes(x = topic, y = country, colour = topic)) +
+  geom_point() +
+  labs(x = "Topic", y = "Country") +
+  ggtitle("Distribution of topics over countries")
+
+```
+
+A more informative plot shows the share of documents of each country that belongs to each topic. Replace x with the name of the data frame with the topics.
+
+```{r}
+x %>%
+  count(country, topic) %>%
+  ggplot(aes(x = country, y = n, fill = topic)) +
+  geom_col(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  labs(title = "Share of topics within each country", x = NULL, y = "Percent of documents") +
+  coord_flip() +
+  theme_minimal()
+
+```
+
+
+# Bonus Exercise
+
+Apply topic modelling to one of the other available data sets. I recommend the UN General Debate corpus ("un-general-debates.csv"). Choose the type of topic modelling you want to apply. Think about which question you can answer with topic modelling. For best practice with seeded LDA, see Watanabe & Zhou (2022), "Theory-Driven Analysis of Large Corpora: Semisupervised Topic Classification of the UN Speeches".
+
+```{r}
+
+
+
+```
+
+
+

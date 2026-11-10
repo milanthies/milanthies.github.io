@@ -62,7 +62,7 @@ Download the files into one folder. Right-click and choose "Save link as" if a f
 **Slides**
 
 - [Slides Day 1 (PDF)](/files/cta-idheap/slides/cta_idheap_slides_day1.pdf)
-- Slides for Day 2 will follow.
+- [Slides Day 2 (PDF)](/files/cta-idheap/slides/cta_idheap_slides_day2.pdf)
 
 **R scripts** (R Markdown, open in RStudio)
 
@@ -70,15 +70,17 @@ Download the files into one folder. Right-click and choose "Save link as" if a f
 - [Script 2: Texts, tokens, DFM and top features](/files/cta-idheap/scripts/2_texts_tokens_dfm.Rmd)
 - [Script 3: Pre-processing and descriptives](/files/cta-idheap/scripts/3_preprocessing_descriptives.Rmd)
 - [Script 4: Dictionaries](/files/cta-idheap/scripts/4_dictionaries.Rmd)
+- [Script 5: Topic models](/files/cta-idheap/scripts/5_topic_models.Rmd)
+- [Script 6: In-class project](/files/cta-idheap/scripts/6_project.Rmd)
 
 **Data**
 
 | File | Used in | Size |
 | --- | --- | --- |
-| [eurydice.RDS](/files/cta-idheap/data/eurydice.RDS): Eurydice descriptions of European education systems | Scripts 3, 4 | 10 MB |
-| [us_election_2020_1st_presidential_debate.csv](/files/cta-idheap/data/us_election_2020_1st_presidential_debate.csv): first Trump–Biden debate, 2020 | Script 4 | 0.1 MB |
+| [eurydice.RDS](/files/cta-idheap/data/eurydice.RDS): Eurydice descriptions of European education systems | Scripts 3, 4, 5, 6 | 10 MB |
+| [us_election_2020_1st_presidential_debate.csv](/files/cta-idheap/data/us_election_2020_1st_presidential_debate.csv): first Trump–Biden debate, 2020 | Scripts 4, 6 | 0.1 MB |
 | [english.yml](/files/cta-idheap/data/english.yml): Newsmap geographical dictionary | Script 4 | 0.01 MB |
-| [un-general-debates.csv](https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv): UN General Debate speeches, 1970–2015 (one row per speech: session, year, country, text). In R: `read.csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv")` | Day 2 project | 129 MB |
+| [un-general-debates.csv](https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv): UN General Debate speeches, 1970–2015 (one row per speech: session, year, country, text). In R: `read.csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv")` | Script 5 (bonus), Script 6 | 129 MB |
 
 ## Readings
 
