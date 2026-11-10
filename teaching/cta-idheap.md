@@ -83,6 +83,7 @@ Download the files into one folder. Right-click and choose "Save link as" if a f
 | [un-general-debates.csv](https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv): UN General Debate speeches, 1970–2015 (one row per speech: session, year, country, text). In R: `read.csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv")` | Script 5 (bonus), Script 6 | 129 MB |
 | [brexit.RData](/files/cta-idheap/data/brexit.RData): House of Commons debates on the EU (Withdrawal) Bill, Sep 2017–Jun 2018, 4,437 speeches (date, speaker, party, terms = word count, text). In R: `load("brexit.RData")` creates the data frame `brexit_bill` | Script 6 | 1.3 MB |
 | [us_regulatory_comments.csv](/files/cta-idheap/data/us_regulatory_comments.csv): public comments to US federal agencies on their regulatory proposals: 1,593 comments (FDA, DEA, EPA and others), 1996–2024, with agency, docket title, date and text | Script 6 | 2.8 MB |
+| [ParlSpeech V2](https://doi.org/10.7910/DVN/L4OAKN): full texts of parliamentary speeches in Austria, the Czech Republic, Denmark, Germany, the Netherlands, New Zealand, Spain, Sweden and the UK (one .rds file per parliament, CC0). The files are large, so subset them in R after `readRDS()` | Script 6 | 0.4–2.5 GB per file |
 
 ## Readings
 
