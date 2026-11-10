@@ -81,6 +81,10 @@ Download the files into one folder. Right-click and choose "Save link as" if a f
 | [us_election_2020_1st_presidential_debate.csv](/files/cta-idheap/data/us_election_2020_1st_presidential_debate.csv): first Trump–Biden debate, 2020 | Scripts 4, 6 | 0.1 MB |
 | [english.yml](/files/cta-idheap/data/english.yml): Newsmap geographical dictionary | Script 4 | 0.01 MB |
 | [un-general-debates.csv](https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv): UN General Debate speeches, 1970–2015 (one row per speech: session, year, country, text). In R: `read.csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv")` | Script 5 (bonus), Script 6 | 129 MB |
+| [brexit.RData](/files/cta-idheap/data/brexit.RData): House of Commons debates on the EU (Withdrawal) Bill, Sep 2017–Jun 2018, 4,437 speeches (date, speaker, party, terms = word count, text). In R: `load("brexit.RData")` creates the data frame `brexit_bill` | Script 6 | 1.3 MB |
+| [us_regulatory_comments.csv](/files/cta-idheap/data/us_regulatory_comments.csv): public comments to US federal agencies on their regulatory proposals: 1,593 comments (FDA, DEA, EPA and others), 1996–2024, with agency, docket title, date and text | Script 6 | 2.8 MB |
+| [ParlSpeech V2](https://doi.org/10.7910/DVN/L4OAKN): full texts of parliamentary speeches in Austria, the Czech Republic, Denmark, Germany, the Netherlands, New Zealand, Spain, Sweden and the UK (one .rds file per parliament, CC0). The files are large, so subset them in R after `readRDS()` | Script 6 | 0.4–2.5 GB per file |
+| [Corp_Nationalrat_V2.rds](https://dataverse.harvard.edu/api/access/datafile/3758792): ParlSpeech V2 corpus of the Austrian Nationalrat, 1996–2018 (date, agenda, speaker, party, chair, terms = word count, text; in German). Direct download from Dataverse. To work with a smaller part, e.g. `at <- subset(readRDS("Corp_Nationalrat_V2.rds"), date >= "2017-01-01" & chair == FALSE)` | Script 6 | 545 MB |
 
 ## Readings
 
