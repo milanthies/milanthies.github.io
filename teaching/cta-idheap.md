@@ -61,7 +61,8 @@ Download the files into one folder. Right-click and choose "Save link as" if a f
 
 **Slides**
 
-Slides for Day 1 and 2 will be added here shortly.
+- [Slides Day 1 (PDF)](/files/cta-idheap/slides/cta_idheap_slides_day1.pdf)
+- Slides for Day 2 will follow.
 
 **R scripts** (R Markdown, open in RStudio)
 

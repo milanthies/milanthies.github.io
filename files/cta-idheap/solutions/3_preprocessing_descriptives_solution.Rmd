@@ -39,7 +39,7 @@ library(readtext)
 
 ## Working with text: Creating objects, creating a corpus 
 
-Now we are ready to create objects to work with. Get the "eurydice" file from ILIAS. Copy the path to the RDS document "eurydice" and use the readRDS() function to import it into the environment. Create a new object for the corpus that only includes the features of the RDS imported. Use the corpus() function.
+Now we are ready to create objects to work with. Get the "eurydice" file from my website. Copy the path to the RDS document "eurydice" and use the readRDS() function to import it into the environment. Create a new object for the corpus that only includes the features of the RDS imported. Use the corpus() function.
 
 Other data formats can be imported with different commands such as readtext() or read.csv()
 
