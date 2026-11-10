@@ -62,7 +62,7 @@ Download the files into one folder. Right-click and choose "Save link as" if a f
 **Slides**
 
 - [Slides Day 1 (PDF)](/files/cta-idheap/slides/cta_idheap_slides_day1.pdf)
-- Slides for Day 2 will follow.
+- [Slides Day 2 (PDF)](/files/cta-idheap/slides/cta_idheap_slides_day2.pdf)
 
 **R scripts** (R Markdown, open in RStudio)
 
