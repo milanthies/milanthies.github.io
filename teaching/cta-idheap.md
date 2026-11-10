@@ -81,6 +81,8 @@ Download the files into one folder. Right-click and choose "Save link as" if a f
 | [us_election_2020_1st_presidential_debate.csv](/files/cta-idheap/data/us_election_2020_1st_presidential_debate.csv): first Trump–Biden debate, 2020 | Scripts 4, 6 | 0.1 MB |
 | [english.yml](/files/cta-idheap/data/english.yml): Newsmap geographical dictionary | Script 4 | 0.01 MB |
 | [un-general-debates.csv](https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv): UN General Debate speeches, 1970–2015 (one row per speech: session, year, country, text). In R: `read.csv("https://media.githubusercontent.com/media/RunestoneInteractive/httlads/master/Data/un-general-debates.csv")` | Script 5 (bonus), Script 6 | 129 MB |
+| [brexit.RData](/files/cta-idheap/data/brexit.RData): House of Commons debates on the EU (Withdrawal) Bill, Sep 2017–Jun 2018, 4,437 speeches (date, speaker, party, terms = word count, text). In R: `load("brexit.RData")` creates the data frame `brexit_bill` | Script 6 | 1.3 MB |
+| [us_regulatory_comments.csv](/files/cta-idheap/data/us_regulatory_comments.csv): 1,593 public comments on US federal agency dockets (FDA, DEA, EPA and others), 1996–2024, with agency, docket title, date and text | Script 6 | 2.8 MB |
 
 ## Readings
 
