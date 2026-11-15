@@ -22,7 +22,7 @@
 
 - id: adult
   colour: green
-  title: "Adult education and training"
+  title: "Adult Education and Training"
   teaser: "How the governance of adult education and training shapes inequalities and how different policy instruments work."
   text: >-
     Participation in adult education is unequal: people with higher qualifications,
@@ -45,7 +45,7 @@
 - id: government
   colour: red
   title: "Political Parties and Policy Bureaucrats in Policymaking"
-  teaser: "What are the origins of important policy changes like the adoption of progressive parental leave reforms or the increasing investment in skills? What is the role of coalition politics in reform processes?"
+  teaser: "Where major reforms such as parental leave or skills investment come from, and what role coalition politics plays."
   text: >-
     Reforms are shaped inside governments as well as in elections. I study how
     coalition partners and ministerial officials influence social investment
