@@ -16,9 +16,7 @@ sections:
     title: "Get in touch"
 # Shown at the bottom of the page, under "Get in touch".
 closing: >-
-  I am glad to talk with policymakers, social partners and journalists about
-  continuing education, vocational training and skills policy in Germany, France
-  and the EU, in English or German. Write to
+  I am always happy to talk with policymakers and journalists. Contact me through
   [milan.thies@unil.ch](mailto:milan.thies@unil.ch).
 
 
