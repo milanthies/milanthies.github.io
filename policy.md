@@ -25,4 +25,4 @@ closing: >-
   <span lang="de">Anfragen gerne auch auf Deutsch.</span>
 ---
 
-I worked in government before I turned to research, and I stay close to policy practice, mainly on continuing education and vocational training in Germany. I have also been interviewed as an expert for studies by the OECD and the Bertelsmann Stiftung.
+I worked in government before I turned to research, and I stay close to policy practice.
