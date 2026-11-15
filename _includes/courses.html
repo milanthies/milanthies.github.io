@@ -1,0 +1,19 @@
+{%- comment -%}
+  Courses from _data/teaching.yml.
+  Use: {% include courses.html %}  or  {% include courses.html limit=3 %}
+{%- endcomment -%}
+{%- assign limit = include.limit | default: 1000 -%}
+<ul class="rows">
+  {%- for course in site.data.teaching limit: limit %}
+  <li>
+    <p class="when">{{ course.when }}</p>
+    <div class="what">
+      <p class="row-title"{% if course.lang %} lang="{{ course.lang }}"{% endif %}>{{ course.title | smartify }}</p>
+      <p class="row-meta">{{ course.kind | smartify }}. {{ course.where | smartify }}.</p>
+      {%- if course.url %}
+      <p class="row-meta"><a href="{% if course.url contains '://' %}{{ course.url }}{% else %}{{ course.url | relative_url }}{% endif %}">{{ course.link_label | default: "Course page" }}</a></p>
+      {%- endif %}
+    </div>
+  </li>
+  {%- endfor %}
+</ul>

@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------------------
+# Courses, newest first. The order in this file is the order on the website.
+# The first three entries are also shown on the home page.
+#
+#   title       course title, in quotes
+#   kind        format and level, e.g. "Bachelor seminar"
+#   where       department and university
+#   when        term(s), kept short, e.g. "Autumn 2026"
+#   url         optional: a course page or syllabus (on this site or elsewhere)
+#   link_label  the words that carry the link
+#   lang        optional: "fr" or "de" if the title is not in English
+# ---------------------------------------------------------------------------
+
+- title: "Introduction to the Sociology of Education"
+  kind: "Bachelor seminar, co-taught"
+  where: "Faculty of Social and Political Sciences, University of Lausanne"
+  when: "Autumn 2026"
+
+- title: "Computational Text Analysis"
+  kind: "Two-day workshop for PhD researchers"
+  where: "IDHEAP doctoral school, University of Lausanne"
+  when: "November 2026"
+  url: "/teaching/cta-idheap/"
+  link_label: "Course page with slides, scripts and data"
+
+- title: "Structural Inequalities in Education"
+  kind: "Master's seminar"
+  where: "IDHEAP, University of Lausanne"
+  when: "Spring 2026"
+
+- title: "Introduction à la sociologie de l'éducation"
+  lang: fr
+  kind: "Guest lecture in the seminar of Annatina Aerne"
+  where: "Faculty of Social and Political Sciences, University of Lausanne"
+  when: "May 2026"
+
+- title: "Computational Text Analysis and the Politics of Education"
+  kind: "Seminar"
+  where: "Institute of Political Science, University of Marburg"
+  when: "Winter 2023/24, summer 2025"
+
+- title: "Opening up the Black Box of Causal Relationships: Process Tracing as a Tool for Qualitative Research"
+  kind: "Workshop for doctoral researchers, organiser"
+  where: "Department of Political and Social Sciences, European University Institute"
+  when: "May 2022"

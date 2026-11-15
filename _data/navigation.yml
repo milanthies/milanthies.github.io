@@ -1,0 +1,9 @@
+# The menu at the top of every page, in this order.
+- title: "Research"
+  url: "/research/"
+- title: "Teaching"
+  url: "/teaching/"
+- title: "Policy"
+  url: "/policy/"
+- title: "CV"
+  url: "/cv/"

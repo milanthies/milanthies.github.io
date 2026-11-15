@@ -1,0 +1,36 @@
+{%- comment -%}
+  Talks from _data/talks.yml, newest first.
+  Use: {% include talks.html %}                    all talks, grouped by year
+       {% include talks.html audience="policy" %}  only talks marked audience: policy
+{%- endcomment -%}
+{%- assign talks = site.data.talks | sort: "date" | reverse -%}
+{%- if include.audience -%}
+  {%- assign talks = talks | where: "audience", include.audience -%}
+  <ul class="rows">
+    {%- for talk in talks %}
+    <li>
+      <p class="when"><time datetime="{{ talk.date }}">{{ talk.date | date: "%B %Y" }}</time></p>
+      <div class="what">
+        <p class="row-title">{% if talk.url %}<a href="{{ talk.url }}">{{ talk.title | smartify }}</a>{% else %}{{ talk.title | smartify }}{% endif %}</p>
+        <p class="row-meta">{{ talk.event | smartify }}. {{ talk.place }}.</p>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+{%- else -%}
+  {%- assign years = talks | group_by_exp: "talk", "talk.date | date: '%Y'" -%}
+  {%- for year in years %}
+  <h3 class="year">{{ year.name }}</h3>
+  <ul class="rows compact">
+    {%- for talk in year.items %}
+    <li>
+      <p class="when"><time datetime="{{ talk.date }}">{{ talk.date | date: "%-d %b" }}</time></p>
+      <div class="what">
+        <p class="row-title">{% if talk.url %}<a href="{{ talk.url }}">{{ talk.title | smartify }}</a>{% else %}{{ talk.title | smartify }}{% endif %}</p>
+        <p class="row-meta">{{ talk.event | smartify }}. {{ talk.place }}.{% if talk.invited %} Invited talk.{% endif %}</p>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- endfor %}
+{%- endif -%}

@@ -1,0 +1,23 @@
+{%- assign profile = site.data.profile -%}
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-col">
+      <p><strong>{{ profile.name }}</strong><br>
+      {%- for line in profile.address %}
+      {{ line }}{% unless forloop.last %}<br>{% endunless %}
+      {%- endfor %}</p>
+    </div>
+    <div class="footer-col">
+      <p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
+      <ul class="inline-links">
+        {%- for link in profile.links %}
+        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p><a href="{{ '/imprint/' | relative_url }}">Imprint and privacy</a></p>
+      <p>Last updated on {{ site.time | date: "%-d %B %Y" }}</p>
+    </div>
+  </div>
+</footer>

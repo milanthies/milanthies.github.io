@@ -2,6 +2,18 @@
 layout: page
 title: Computational Text Analysis (IDHEAP)
 permalink: /teaching/cta-idheap/
+description: "Two-day workshop on computational text analysis for PhD researchers at IDHEAP, University of Lausanne: schedule, slides, R scripts, data and readings."
+sections:
+  - id: about-the-course
+    title: "About the course"
+  - id: before-the-first-day
+    title: "Before the first day"
+  - id: schedule
+    title: "Schedule"
+  - id: materials
+    title: "Materials"
+  - id: readings
+    title: "Readings"
 ---
 
 **Two-day workshop for PhD researchers**<br>

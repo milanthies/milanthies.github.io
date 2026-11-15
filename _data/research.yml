@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# Research themes. They appear on the home page (title + teaser) and on the
+# Research page (title + text + the papers that carry the same theme id).
+#
+#   id      short name; papers in publications.yml point to it with "theme:"
+#   colour  blue, green, violet, red or brown (the mark next to each paper)
+#   title   heading
+#   teaser  one sentence for the home page
+#   text    one paragraph for the Research page (Markdown allowed)
+# ---------------------------------------------------------------------------
+
+- id: state
+  colour: blue
+  title: "Vocational training and the state"
+  teaser: "Why governments take a larger role in vocational training, and what this means for inclusion."
+  text: >-
+    Vocational training in countries such as Germany rests on cooperation between
+    employers, unions and the state. I show that state involvement has grown in most
+    EU member states since the mid-2000s, including in Germany, a least likely case. I examine
+    why governments intervene, which governance tools they use, and whether
+    intervention widens access to training for people with few qualifications.
+
+- id: adult
+  colour: green
+  title: "Adult education and training"
+  teaser: "How the organisation of continuing training shapes who takes part and who is left out."
+  text: >-
+    Participation in adult education is unequal: people with higher qualifications,
+    in better jobs and in larger firms train far more than others. I study how the organisation of
+    continuing training, and the division of responsibility between employers,
+    individuals and the state, shapes these inequalities. I am also working on an
+    edited volume on reskilling as social policy.
+
+- id: eu
+  colour: violet
+  title: "EU education and skills policy"
+  teaser: "What the EU means by skills, and how its objectives have shifted since the 1980s."
+  text: >-
+    The EU has made skills a political priority, although education and training
+    remain national competences. I study what the EU means by skills, how its
+    objectives have moved between economic efficiency and social inclusion since
+    the 1980s, and how member states adapt European frameworks to their own
+    priorities.
+
+- id: government
+  colour: red
+  title: "Parties and bureaucrats in policymaking"
+  teaser: "How coalition partners and ministerial officials shape social investment reforms."
+  text: >-
+    Reforms are shaped inside governments as well as in elections. I study how
+    coalition partners and ministerial officials influence social investment
+    reforms such as parental leave and training policy.

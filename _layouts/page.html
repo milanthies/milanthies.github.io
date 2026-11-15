@@ -1,0 +1,32 @@
+---
+layout: default
+---
+{%- comment -%}
+  A normal page: title, an optional list of sections in the margin, then the text.
+  The margin list comes from "sections:" in the page's front matter, or from the
+  research themes when the page says "toc: themes".
+{%- endcomment -%}
+<div class="wrap doc">
+  <h1 class="page-title">{{ page.title | smartify }}</h1>
+
+  <nav class="doc-margin" aria-label="On this page">
+    {%- if page.toc == "themes" %}
+    <ul class="toc toc-marks">
+      {%- for theme in site.data.research %}
+      <li class="mark-{{ theme.colour }}"><a href="#{{ theme.id }}">{{ theme.title | smartify }}</a></li>
+      {%- endfor %}
+      <li class="mark-grey"><a href="#other">Thesis and book contributions</a></li>
+    </ul>
+    {%- elsif page.sections %}
+    <ul class="toc">
+      {%- for section in page.sections %}
+      <li><a href="#{{ section.id }}">{{ section.title }}</a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </nav>
+
+  <div class="doc-text">
+    {{ content }}
+  </div>
+</div>

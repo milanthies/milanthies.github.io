@@ -1,0 +1,32 @@
+<!doctype html>
+<!--
+  Source of assets/img/social-card.png, the picture shown when a link to the
+  site is shared (LinkedIn, Bluesky, messengers). It is not part of the website.
+  To change it: edit the text below, open this file in a browser, take a
+  1200 x 630 screenshot of the card and save it as assets/img/social-card.png.
+-->
+<html lang="en">
+<meta charset="utf-8">
+<title>Social card</title>
+<style>
+@font-face { font-family: Vollkorn; src: url(../assets/fonts/vollkorn-latin-wght-normal.woff2); font-weight: 400 900; }
+@font-face { font-family: Fira; src: url(../assets/fonts/fira-sans-latin-400-normal.woff2); font-weight: 400; }
+@font-face { font-family: Fira; src: url(../assets/fonts/fira-sans-latin-600-normal.woff2); font-weight: 600; }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  width: 1200px; height: 630px; background: #fff; color: #000;
+  padding: 72px 84px 64px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  font-family: Fira, sans-serif;
+}
+.marks { display: flex; gap: 9px; }
+.marks i { display: block; width: 11px; height: 54px; }
+.statement { font-family: Vollkorn, serif; font-weight: 500; font-size: 64px; line-height: 1.1; letter-spacing: -.014em; margin: 0; max-width: 980px; }
+.who { font-size: 27px; line-height: 1.35; color: #4d4d4d; }
+.who b { display: block; color: #000; font-weight: 600; font-size: 31px; }
+</style>
+<div class="marks"><i style="background:#2b4fa2"></i><i style="background:#2f7d4f"></i><i style="background:#6a4c9c"></i><i style="background:#b83a2e"></i></div>
+<p class="statement">How do states govern education and training: who gets access to skills, who pays, and who decides?</p>
+<div class="who"><b>Milan Thies</b>Political economy of education, training and the welfare state</div>
+</html>

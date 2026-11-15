@@ -1,0 +1,60 @@
+{%- comment -%}
+  One paper, with summary and links.
+  Use: {% include pub.html pub=paper level=3 %}
+{%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- assign level = include.level | default: 3 -%}
+{%- assign me = site.data.profile.name -%}
+{%- capture me_bold -%}<strong>{{ me }}</strong>{%- endcapture -%}
+{%- assign colour = "grey" -%}
+{%- for theme in site.data.research -%}
+  {%- if theme.id == p.theme -%}{%- assign colour = theme.colour -%}{%- endif -%}
+{%- endfor -%}
+{%- assign first_link = p.links | first -%}
+{%- capture title -%}{{ p.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}{%- endcapture -%}
+<li class="pub mark-{{ colour }}">
+  <h{{ level }} class="pub-title"{% if p.lang %} lang="{{ p.lang }}"{% endif %}>
+    {%- if first_link -%}
+      <a href="{{ first_link.url }}">{{ title }}</a>
+    {%- else -%}
+      {{ title }}
+    {%- endif -%}
+  </h{{ level }}>
+  <p class="pub-meta">
+    {%- if p.authors -%}
+      {{ p.authors | smartify | replace: me, me_bold }}.
+    {%- elsif p.with -%}
+      With {{ p.with | smartify }}.
+    {%- endif %}
+    {% if p.status and p.status != "" -%}
+      {{ p.status | markdownify | remove: "<p>" | remove: "</p>" | strip }}.
+    {%- else -%}
+      {%- if p.type == "article" or p.type == "review" -%}
+        <cite>{{ p.venue | smartify }}</cite>
+      {%- else -%}
+        {{ p.venue | markdownify | remove: "<p>" | remove: "</p>" | strip }}
+      {%- endif -%}
+      {%- if p.details %} {{ p.details }}{% endif -%}
+      {%- if p.year %}, {{ p.year }}{% endif %}.
+    {%- endif -%}
+  </p>
+  {%- if p.summary %}
+  <div class="pub-summary">{{ p.summary | markdownify }}</div>
+  {%- endif %}
+  {%- if p.note %}
+  <div class="pub-summary">{{ p.note | markdownify }}</div>
+  {%- endif %}
+  {%- if p.abstract and p.abstract != "" %}
+  <details class="pub-abstract">
+    <summary>Abstract</summary>
+    {{ p.abstract | markdownify }}
+  </details>
+  {%- endif %}
+  {%- if p.links %}
+  <p class="pub-links">
+    {%- for link in p.links %}
+    <a href="{{ link.url }}">{{ link.label }}</a>
+    {%- endfor %}
+  </p>
+  {%- endif %}
+</li>

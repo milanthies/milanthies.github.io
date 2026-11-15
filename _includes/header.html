@@ -1,0 +1,22 @@
+{%- assign profile = site.data.profile -%}
+<header class="site-header">
+  <div class="wrap header-inner">
+    {%- if page.url == "/" %}
+    <h1 class="brand"><a href="{{ '/' | relative_url }}" aria-current="page">{{ profile.name }}</a></h1>
+    {%- else %}
+    <p class="brand"><a href="{{ '/' | relative_url }}">{{ profile.name }}</a></p>
+    {%- endif %}
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        {%- for item in site.data.navigation -%}
+          {%- assign size = item.url | size -%}
+          {%- assign start = page.url | slice: 0, size -%}
+          <li><a href="{{ item.url | relative_url }}"
+            {%- if page.url == item.url %} aria-current="page"
+            {%- elsif start == item.url %} class="is-section"
+            {%- endif %}>{{ item.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
+</header>

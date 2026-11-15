@@ -1,26 +1,13 @@
 ---
 layout: home
-title: About
+title: "Milan Thies"
 permalink: /
+# The large sentence at the top of the home page.
+statement: "I study how states govern education and training: who gets access to skills, who pays, and who decides."
 ---
 
-I am a postdoctoral researcher in the Social Policy Unit at the Swiss Graduate School of Public Administration (**IDHEAP**), **University of Lausanne**. My research focuses on education, skills and labour market policy, but also more broadly on the transformation of (welfare) states in the context of structural change. I use mixed methods, including computational text analysis and qualitative methods building on elite interviews and process tracing.
+I am a postdoctoral researcher in the Social Policy Unit at [IDHEAP](https://www.unil.ch/idheap/), the Swiss Graduate School of Public Administration at the University of Lausanne. I work in the [GOVPET Leading House](https://ibb.unisg.ch/en/research-labs/govpet-leading-house/research-program/) on governance in vocational and professional education and training, and at the [LIVES Centre](https://lives.unil.ch/en/page-de-base/about-lives-centre) for life course research.
 
-I have a PhD in Political and Social Sciences from the European University Institute, which I [defended in 2026](https://www.eui.eu/events?id=584867).
+My research is in comparative political economy and social policy. It deals with education, skills and labour market policy and, more broadly, with the transformation of welfare states under structural change, mainly in Germany, France and at EU level. I combine computational text analysis with elite interviews and process tracing.
 
-I am currently [teaching](/teaching/) different seminars at the University of Lausanne, including a bachelor seminar "Introduction to the Sociology of Education" and a PhD level seminar on [Computational Text Analysis](/teaching/cta-idheap/).
-
-## Recent publications
-
-**Thies, M.** (2025). State Intervention in Vocational Education: Training for the Digital and Green Transitions. *Regulation & Governance*. <https://doi.org/10.1111/rego.70074>
-
-**Cino Pagliarello, M., Thies, M., Tubakovic, T. & Nunes, D.** (2025). The Polysemy of Skills: Exploring Country-Specific Approaches in the Knowledge Economy. *Regulation & Governance*. <https://doi.org/10.1111/rego.70102>
-
-**Alvariño, M. & Thies, M.** (2024). Conviction or Consent? Tracing the Influence of Coalition Partners on Family Policy under Centre-Right Ministers. *Government and Opposition*. <https://doi.org/10.1017/gov.2024.25>
-
-More on the [Research](/research/) page.
-
-## Contact
-
-IDHEAP, University of Lausanne, 1015 Lausanne, Switzerland  
-[milan.thies@unil.ch](mailto:milan.thies@unil.ch)
+I hold a PhD in Political and Social Sciences from the European University Institute, where I [defended my thesis](https://www.eui.eu/events?id=584867) in March 2026. Before my doctorate I worked at the German Federal Ministry of Labour and Social Affairs, which has since appointed me to an advisory council on continuing education.
