@@ -125,7 +125,7 @@ Upload a photo named `portrait.jpg` into `assets/img/`. It appears on the home p
 
 ### Change the home page
 
-`index.md` holds the large sentence (`statement`, at the top) and the three paragraphs of the bio. The lists below them come from the data files: research themes from `_data/research.yml`, selected publications from `_data/publications.yml`, courses from `_data/teaching.yml`, roles from `_data/policy.yml`.
+`index.md` holds the large sentence (`statement`, at the top) and the three paragraphs of the bio. The lists below them come from the data files: research themes from `_data/research.yml`, selected publications from `_data/publications.yml`, courses from `_data/teaching.yml`.
 
 ### Change a research theme, or add one
 

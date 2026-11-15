@@ -11,8 +11,8 @@
 
 - id: state
   colour: blue
-  title: "Vocational training and the state"
-  teaser: "Why governments take a larger role in vocational training, and what this means for inclusion."
+  title: "Vocational Education and Training"
+  teaser: "Why governments intervene in VET systems, and what this means for access to training."
   text: >-
     Vocational training in countries such as Germany rests on cooperation between
     employers, unions and the state. I show that state involvement has grown in most
@@ -23,7 +23,7 @@
 - id: adult
   colour: green
   title: "Adult education and training"
-  teaser: "How the organisation of continuing training shapes who takes part and who is left out."
+  teaser: "How the governance of adult education and training shapes inequalities and how different policy instruments work."
   text: >-
     Participation in adult education is unequal: people with higher qualifications,
     in better jobs and in larger firms train far more than others. I study how the organisation of
@@ -33,8 +33,8 @@
 
 - id: eu
   colour: violet
-  title: "EU education and skills policy"
-  teaser: "What the EU means by skills, and how its objectives have shifted since the 1980s."
+  title: "EU Employment and Education Policy"
+  teaser: "What EU employment and education policies aim to achieve."
   text: >-
     The EU has made skills a political priority, although education and training
     remain national competences. I study what the EU means by skills, how its
@@ -44,8 +44,8 @@
 
 - id: government
   colour: red
-  title: "Parties and bureaucrats in policymaking"
-  teaser: "How coalition partners and ministerial officials shape social investment reforms."
+  title: "Political Parties and Policy Bureaucrats in Policymaking"
+  teaser: "What are the origins of important policy changes like the adoption of progressive parental leave reforms or the increasing investment in skills? What is the role of coalition politics in reform processes?"
   text: >-
     Reforms are shaped inside governments as well as in elections. I study how
     coalition partners and ministerial officials influence social investment
