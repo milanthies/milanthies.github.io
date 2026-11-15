@@ -54,6 +54,7 @@
   title: "Natural Language Processing in VET Research"
   event: "Cedefop, European Centre for the Development of Vocational Training"
   place: "Online"
+  invited: true
   audience: policy
 
 - date: "2025-04-09"
@@ -80,6 +81,7 @@
   title: "Natural Language Processing and the Analysis of Skill Formation Systems"
   event: "Kolloquium zur Berufsbildungsforschung, Federal Institute for Vocational Education and Training (BIBB)"
   place: "Bonn, Germany"
+  invited: true
   audience: policy
   url: "https://www.bibb.de/dokumente/pdf/Thies_Abstract.pdf"
 

@@ -11,7 +11,7 @@ sections:
   - id: publications
     title: "Policy publications"
   - id: talks
-    title: "Talks"
+    title: "Invited talks"
   - id: contact
     title: "Get in touch"
 # Shown at the bottom of the page, under "Get in touch".
