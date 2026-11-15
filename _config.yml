@@ -1,14 +1,28 @@
-title: Milan Thies
-description: ""
+# ---------------------------------------------------------------------------
+# Site settings. You rarely need to change this file.
+# Your texts and lists live in the .md pages and in the _data folder.
+# See README.md for a guide.
+# ---------------------------------------------------------------------------
+
+title: "Milan Thies"
+description: >-
+  Milan Thies is a postdoctoral researcher at IDHEAP, University of Lausanne.
+  He studies the political economy of education, training and the welfare state.
 url: "https://milanthies.github.io"
-theme: minima            # GitHub Pages uses Minima 2.5.1
+baseurl: ""
+lang: "en"
 
-# Minima 2.5 settings (Minima 3 keys such as skin/nav_pages/social_links are ignored by GitHub Pages)
-email: milan.thies@unil.ch
-github_username: milanthies
-header_pages:           # header menu, in this order
-  - research.md
-  - teaching.md
+# No external theme: every layout and style is in this repository.
+theme: null
 
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Files that are part of the repository but not of the website.
 exclude:
   - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor

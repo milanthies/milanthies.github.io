@@ -1,26 +1,15 @@
 ---
-layout: page
-title: Research
+layout: research
+title: "Research"
 permalink: /research/
+description: "Research by Milan Thies on vocational education and training, adult education, EU employment and education policy, and policymaking in government: publications and work in progress."
+toc: themes
+# Shown at the bottom of the page.
+closing: >-
+  Working papers are available on request. Write to
+  [milan.thies@unil.ch](mailto:milan.thies@unil.ch).
 ---
 
-*The website is currently incomplete. Below are the most recent publications.*
+How do states adapt to structural change, and what role does investing in people’s capabilities play? I study how governments, employers, unions and international organisations use social policy, and skills policy in particular, to respond to technological change and artificial intelligence, climate change, demographic ageing and geopolitical shifts.
 
-## Publications
-
-**Thies, M.** (2026). *Governing Capabilities: The Political Economy of Skills in the Knowledge Economy*. PhD thesis, European University Institute. <https://hdl.handle.net/1814/94826>
-
-**Thies, M.** (2025). State Intervention in Vocational Education: Training for the Digital and Green Transitions. *Regulation & Governance*. <https://doi.org/10.1111/rego.70074> (Original article)
-
-**Cino Pagliarello, M., Thies, M., Tubakovic, T. & Nunes, D.** (2025). The Polysemy of Skills: Exploring Country-Specific Approaches in the Knowledge Economy. *Regulation & Governance*. <https://doi.org/10.1111/rego.70102> (Original article)
-
-**Alvariño, M. & Thies, M.** (2024). Conviction or Consent? Tracing the Influence of Coalition Partners on Family Policy under Centre-Right Ministers. *Government & Opposition*. <https://doi.org/10.1017/gov.2024.25> (Original article)
-
-In: Hassel, A. & Wegrich, K. (2022). *How to do Public Policy*. Oxford University Press. <https://doi.org/10.1093/oso/9780198747000.001.0001> (Contribution to book)
-
-- School Absenteeism in Berlin. Chapter 5: How to Implement Public Policy (with Julia Melzer & Dustin Koehler).
-- The OECD PISA Study. Chapter 6: How to Evaluate Policies (with Jessica Leong Cohen).
-
-## Working papers
-
-**Thies, M.**, Bonoli, G. & Graf, L. (working paper). Inclusiveness, Efficiency, or Social Investment? Tracing Four Decades of EU Skills Policy.
+I combine quantitative and qualitative methods. Three approaches are central to my work. Computational text analysis lets me trace policy change across many countries and decades. Elite interviews and process tracing explain it in individual cases. Cross-sectional and longitudinal survey data, such as PIAAC and national panel studies, show what policies do and who benefits from them.

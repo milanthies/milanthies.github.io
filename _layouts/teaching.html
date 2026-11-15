@@ -1,0 +1,17 @@
+---
+layout: page
+---
+<div class="prose lead-text">
+  {{ content }}
+</div>
+
+<section id="courses">
+  <h2>Courses</h2>
+  {% include courses.html %}
+</section>
+
+{%- if page.closing %}
+<div class="prose closing">
+  {{ page.closing | markdownify }}
+</div>
+{%- endif %}

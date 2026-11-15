@@ -1,0 +1,20 @@
+{%- comment -%}
+  A dated list: period on the left, entry on the right.
+  Use: {% include rows.html items=site.data.cv.positions %}
+{%- endcomment -%}
+<ul class="rows">
+  {%- for row in include.items %}
+  <li>
+    <p class="when">{{ row.when }}</p>
+    <div class="what">
+      <p class="row-title">{{ row.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+      {%- if row.org %}
+      <p class="row-meta">{{ row.org | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+      {%- endif %}
+      {%- if row.text %}
+      <div class="row-text">{{ row.text | markdownify }}</div>
+      {%- endif %}
+    </div>
+  </li>
+  {%- endfor %}
+</ul>

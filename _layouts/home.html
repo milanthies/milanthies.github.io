@@ -1,0 +1,70 @@
+---
+layout: default
+---
+{%- assign profile = site.data.profile -%}
+{%- assign portrait = nil -%}
+{%- for file in site.static_files -%}
+  {%- if file.path contains "/assets/img/portrait." -%}{%- assign portrait = file -%}{%- endif -%}
+{%- endfor -%}
+<div class="wrap">
+
+  <section class="hero" aria-label="About">
+    <div class="hero-id">
+      {%- if portrait %}
+      <img class="portrait" src="{{ portrait.path | relative_url }}" alt="{{ profile.portrait_alt | escape }}" width="400" height="500">
+      {%- endif %}
+      <p class="hero-role">{{ profile.role }}<br>{{ profile.unit }}<br>{{ profile.institution }}</p>
+    </div>
+    <div class="hero-main">
+      <p class="statement">{{ page.statement | smartify }}</p>
+      <div class="prose">
+        {{ content }}
+      </div>
+    </div>
+    <ul class="hero-links">
+      <li><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></li>
+      {%- if profile.cv_pdf %}
+      <li><a href="{{ profile.cv_pdf | relative_url }}">CV (PDF)</a></li>
+      {%- endif %}
+      {%- for link in profile.links %}
+      <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section class="band" aria-labelledby="home-research">
+    <h2 class="band-label" id="home-research">Research</h2>
+    <div class="band-body">
+      <ul class="themes">
+        {%- for theme in site.data.research %}
+        <li class="theme-item mark-{{ theme.colour }}">
+          <h3 class="theme-item-title"><a href="{{ '/research/' | relative_url }}#{{ theme.id }}">{{ theme.title | smartify }}</a></h3>
+          <p>{{ theme.teaser | smartify }}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="home-publications">
+    <h2 class="band-label" id="home-publications">Selected publications</h2>
+    <div class="band-body">
+      <ul class="pubs">
+        {%- assign selected = site.data.publications | where: "selected", true -%}
+        {%- for paper in selected %}
+        {% include pub.html pub=paper level=3 %}
+        {%- endfor %}
+      </ul>
+      <p class="more"><a href="{{ '/research/' | relative_url }}">All publications and work in progress</a></p>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="home-teaching">
+    <h2 class="band-label" id="home-teaching">Teaching</h2>
+    <div class="band-body">
+      {% include courses.html limit=3 %}
+      <p class="more"><a href="{{ '/teaching/' | relative_url }}">All courses and teaching materials</a></p>
+    </div>
+  </section>
+
+</div>

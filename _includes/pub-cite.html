@@ -1,0 +1,38 @@
+{%- comment -%}
+  One paper as a single-line citation, for the CV page.
+  Use: {% include pub-cite.html pub=paper %}
+{%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- assign me = site.data.profile.name -%}
+{%- capture me_bold -%}<strong>{{ me }}</strong>{%- endcapture -%}
+{%- assign first_link = p.links | first -%}
+{%- capture title -%}{{ p.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}{%- endcapture -%}
+{%- assign last = p.title | strip | slice: -1, 1 -%}
+{%- assign stop = "." -%}
+{%- if last == "?" or last == "!" or last == "." -%}{%- assign stop = "" -%}{%- endif -%}
+<li class="cite"{% if p.lang %} lang="{{ p.lang }}"{% endif %}>
+  {%- if p.authors -%}
+    {{ p.authors | smartify | replace: me, me_bold }}.
+  {%- elsif p.with -%}
+    {{ me_bold }}, with {{ p.with | smartify }}.
+  {%- elsif p.type != "report" -%}
+    {{ me_bold }}.
+  {%- endif %}
+  {% if p.year %}{{ p.year }}. {% endif -%}
+  {%- if first_link -%}
+    <a href="{{ first_link.url }}">{{ title }}</a>{{ stop }}
+  {%- else -%}
+    {{ title }}{{ stop }}
+  {%- endif %}
+  {% if p.status and p.status != "" -%}
+    {{ p.status | markdownify | remove: "<p>" | remove: "</p>" | strip }}.
+  {%- else -%}
+    {%- if p.type == "article" or p.type == "review" -%}
+      <cite>{{ p.venue | smartify }}</cite>
+    {%- else -%}
+      {{ p.venue | markdownify | remove: "<p>" | remove: "</p>" | strip }}
+    {%- endif -%}
+    {%- if p.details %} {{ p.details }}{% endif %}.
+  {%- endif -%}
+  {%- if p.note and p.type == "report" %} {{ p.note | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% endif -%}
+</li>

@@ -1,0 +1,183 @@
+# ---------------------------------------------------------------------------
+# All publications and papers. The order in this file is the order on the
+# website, so keep the newest entry of each kind at the top.
+#
+# To add a paper: copy an existing entry (from "- title:" down to the last
+# link), paste it above, and change the text between the quotes.
+#
+# Fields
+#   title     in quotes
+#   (In titles, venues and status lines, *asterisks* give italics.)
+#   authors   all authors in order, in quotes. Your own name is set in bold
+#             automatically. Leave out for single-authored work.
+#   with      alternative to "authors": co-authors only, shown as "With ..."
+#   year      year of publication (leave out for unpublished work)
+#   type      article | chapter | review | thesis | report
+#             ("report" = policy publications, shown on the Policy page;
+#             "review" = book reviews, listed on the CV page only)
+#   venue     journal, book or publisher, in quotes
+#   details   optional: volume, issue, pages
+#   status    ONLY for unpublished work, e.g. "Working paper" or
+#             "Revise and resubmit, Journal of X". Anything with a status is
+#             listed under "Work in progress". Delete the line once published.
+#   theme     state | adult | eu | government  (see research.yml); optional
+#   selected  true = also shown on the home page
+#   summary   two or three plain sentences about the paper
+#   abstract  optional: the full abstract; shown behind an "Abstract" toggle
+#   note      optional: a short remark, e.g. your role in a report
+#   lang      optional: "de" or "fr" if the title is not in English
+#   links     label + url pairs, as many as you like
+# ---------------------------------------------------------------------------
+
+# --- Journal articles -------------------------------------------------------
+
+- title: "State Intervention in Vocational Education: Training for the Digital and Green Transitions"
+  year: 2025
+  type: article
+  venue: "Regulation & Governance"
+  theme: state
+  selected: true
+  summary: >-
+    Have states become more central to skill formation? Topic models applied to 291
+    standardised descriptions of national training systems show that language associated
+    with state involvement grew, relative to private governance, in most EU member states
+    between 2005 and 2022. A case study of Germany, a least likely case, draws on 32 elite
+    interviews to show how digitalisation and climate change opened a window for
+    redefining the role of the state in vocational training.
+  links:
+    - label: "Article (open access)"
+      url: "https://doi.org/10.1111/rego.70074"
+    - label: "Repository copy"
+      url: "https://hdl.handle.net/1814/93734"
+
+- title: "The Polysemy of Skills: Exploring Country-Specific Approaches in the Knowledge Economy"
+  authors: "Marina Cino Pagliarello, Milan Thies, Tamara Tubakovic and Douglas Nunes"
+  year: 2025
+  type: article
+  venue: "Regulation & Governance"
+  theme: eu
+  selected: true
+  summary: >-
+    How can the EU coordinate skills policy across very different member states? We
+    analyse the national plans with which Germany, France, Sweden and Spain implement the
+    Osnabrück Declaration on vocational training. Each country reads "skills" through its
+    own priorities, which allows member states to align with EU objectives without
+    converging on a single model.
+  links:
+    - label: "Article (open access)"
+      url: "https://doi.org/10.1111/rego.70102"
+    - label: "Repository copy"
+      url: "https://hdl.handle.net/1814/93913"
+
+- title: "Conviction or Consent? Tracing the Influence of Coalition Partners on Family Policy under Centre-Right Ministers"
+  authors: "Manuel Alvariño and Milan Thies"
+  year: 2024
+  type: article
+  venue: "Government and Opposition"
+  theme: government
+  selected: true
+  summary: >-
+    Why do centre-right governments adopt progressive family policies? Tracing parental
+    leave reforms under centre-right ministers in Germany and Spain, we find that coalition
+    and support parties designed the reforms and secured their adoption through three
+    mechanisms: agreements for government formation, conditions for the government's
+    survival and continuity in the bureaucracy.
+  links:
+    - label: "Article (open access)"
+      url: "https://doi.org/10.1017/gov.2024.25"
+    - label: "Summary on the WellSIRE blog"
+      url: "https://sites.eui.eu/wellsire/blog/coalition-partners-and-social-investment-family-policy-new-wellsire-article-in-government-and-opposition"
+
+# --- Work in progress (anything with a "status" line) -------------------------
+
+- title: "Inclusiveness, Efficiency, or Social Investment? Tracing Four Decades of EU Skills Policy"
+  authors: "Milan Thies, Giuliano Bonoli and Lukas Graf"
+  type: article
+  status: "Revise and resubmit, *Journal of European Public Policy*"
+  theme: eu
+  summary: >-
+    Maps the objectives of EU skills policy from 1985 to 2023, applying natural language
+    inference to European Commission press releases, speeches and statements.
+
+- title: "Is Education the New Employment Policy?"
+  type: chapter
+  status: "Book chapter, forthcoming 2027"
+  theme: eu
+
+- title: "How to Design Inclusive Education Systems: The Governance of Skills Through Networks, Markets and Hierarchy"
+  type: article
+  status: "Working paper"
+  theme: state
+  summary: >-
+    Compares how France and Germany govern training through networks, markets and
+    hierarchy, and what each mix means for the access of low-skilled workers.
+
+- title: "Collective Organisation and Inequalities in Access to Adult Education"
+  with: "Giovanni Greco"
+  type: article
+  status: "Work in progress"
+  theme: adult
+
+# --- Thesis, reviews and book contributions ---------------------------------
+# (Book reviews, type "review", appear on the CV page but not on the Research page.)
+
+- title: "Governing Capabilities: The Political Economy of Skills in the Knowledge Economy"
+  year: 2026
+  type: thesis
+  venue: "PhD thesis, European University Institute"
+  summary: >-
+    Four papers on whether states have the capabilities to govern skills in the knowledge
+    economy, and on what this means for the inclusiveness of training systems. Supervised
+    by Anton Hemerijck; examined by Giuliano Bonoli, Anke Hassel and Ellen Immergut.
+  links:
+    - label: "Thesis in the EUI repository"
+      url: "https://hdl.handle.net/1814/94826"
+
+- title: "Review of *Collective Skill Formation in the Knowledge Economy*, edited by Giuliano Bonoli and Patrick Emmenegger"
+  year: 2024
+  type: review
+  venue: "Social Policy & Administration"
+  details: "58, 205–206"
+  links:
+    - label: "Book review"
+      url: "https://doi.org/10.1111/spol.12916"
+
+- title: "School Absenteeism in Berlin"
+  authors: "Milan Thies, Julia Melzer and Dustin Koehler"
+  year: 2022
+  type: chapter
+  venue: "Case study in chapter 5 of Anke Hassel and Kai Wegrich, *How to Do Public Policy*, Oxford University Press"
+  links:
+    - label: "Book"
+      url: "https://doi.org/10.1093/oso/9780198747000.001.0001"
+
+- title: "The OECD PISA Study"
+  authors: "Milan Thies and Jessica Leong Cohen"
+  year: 2022
+  type: chapter
+  venue: "Case study in chapter 6 of Anke Hassel and Kai Wegrich, *How to Do Public Policy*, Oxford University Press"
+  links:
+    - label: "Book"
+      url: "https://doi.org/10.1093/oso/9780198747000.001.0001"
+
+# --- Policy publications (type: report), shown on the Policy page ------------
+
+- title: "The Federal Ministry of Labour and Social Affairs' Thematic Reader for Germany's Presidency of the Council of the European Union"
+  year: 2020
+  type: report
+  venue: "German Federal Ministry of Labour and Social Affairs"
+  note: "Companion volume to the Presidency: close to sixty contributions on social Europe, global supply chains and the future of work. I was an editor of the volume."
+  links:
+    - label: "Thematic Reader"
+      url: "https://www.bmas.de/EN/Services/Publications/a811-eu2020-thematic-reader.html"
+
+- title: "Studie zu Aufgaben und Organisationsformen von Innovationseinheiten für die Verwaltung"
+  lang: de
+  authors: "Thurid Hustedt, Kai Wegrich, Gerhard Hammerschmid, Nils Heinemann, Tim Hildebrandt, Anna Hundehege, Maximilian Kupi, Elias Lingnau, Dinah Rabe, Milan Thies and Sophie Vogt-Hohenlinde"
+  year: 2021
+  type: report
+  venue: "Hertie School, study for the German Federal Chancellery"
+  note: "A study on the tasks and organisation of innovation units in public administration. I was responsible in particular for chapter 6, on the skills a future-ready ministerial administration needs."
+  links:
+    - label: "Study (in German)"
+      url: "https://www.bundesregierung.de/breg-de/aktuelles/studie-zu-aufgaben-und-organisationsformen-von-innovationseinheiten-fuer-die-verwaltung-2214674"

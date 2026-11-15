@@ -1,0 +1,36 @@
+# ---------------------------------------------------------------------------
+# Who you are and where to find you. Used in the header, the home page,
+# the footer and the page titles. Change it here once and it changes everywhere.
+# ---------------------------------------------------------------------------
+
+name: "Milan Thies"
+role: "Postdoctoral researcher"
+unit: "Social Policy Unit, IDHEAP"
+institution: "University of Lausanne"
+
+email: "milan.thies@unil.ch"
+
+# Postal address, shown in the footer and on the imprint page.
+address:
+  - "IDHEAP, University of Lausanne"
+  - "1015 Lausanne, Switzerland"
+
+# The CV that people can download. To update it, upload a new PDF with the
+# same file name into the "files" folder.
+cv_pdf: "/files/cv-milan-thies.pdf"
+
+# Portrait: upload a photo named portrait.jpg into assets/img and it appears
+# on the home page automatically. Nothing else to change.
+portrait_alt: "Portrait of Milan Thies"
+portrait_credit: ""        # e.g. "Photo: Jane Doe". Shown on the imprint page.
+
+# Profiles, shown on the home page and in the footer, in this order.
+links:
+  - label: "Google Scholar"
+    url: "https://scholar.google.com/citations?user=9lZEb4oAAAAJ"
+  - label: "ORCID"
+    url: "https://orcid.org/0000-0001-8926-5387"
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/milanthies/"
+  - label: "Bluesky"
+    url: "https://bsky.app/profile/milanthies.bsky.social"

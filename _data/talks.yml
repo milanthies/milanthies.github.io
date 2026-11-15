@@ -1,0 +1,142 @@
+# ---------------------------------------------------------------------------
+# Presentations. They are sorted by date automatically, so you can add a new
+# one anywhere. All of them appear on the CV page; those marked
+# "audience: policy" also appear on the Policy page.
+#
+#   date      "YYYY-MM-DD", in quotes
+#   title     in quotes
+#   event     conference, workshop or seminar series
+#   place     city and country (or "Online")
+#   invited   true for invited talks (optional)
+#   audience  policy  (optional; for talks at ministries, agencies and other
+#             policy institutions)
+#   url       optional link, e.g. to slides or an abstract
+# ---------------------------------------------------------------------------
+
+- date: "2026-08-27"
+  title: "The Governance of VET through Networks, Markets and Hierarchy"
+  event: "ESPAnet Annual Conference"
+  place: "Lisbon, Portugal"
+
+- date: "2026-06-16"
+  title: "Mapping the Evolution of EU Skills Policies: Inclusiveness, Efficiency or Social Investment?"
+  event: "GOVPET Advisory Council Meeting, University of St Gallen"
+  place: "Appenzell, Switzerland"
+
+- date: "2026-06-04"
+  title: "Mapping the Evolution of EU Skills Policies: Inclusiveness, Efficiency or Social Investment?"
+  event: "32nd International Conference of Europeanists, Council for European Studies"
+  place: "Dublin, Ireland"
+
+- date: "2026-03-02"
+  title: "Governing Capabilities: The Political Economy of Skills in the Knowledge Economy"
+  event: "PhD thesis defence, European University Institute"
+  place: "Florence, Italy"
+  url: "https://www.eui.eu/events?id=584867"
+
+- date: "2026-01-20"
+  title: "Mapping the Evolution of EU Skills Policies: Inclusiveness, Efficiency or Social Investment?"
+  event: "Special issue workshop, University of Konstanz"
+  place: "Konstanz, Germany"
+
+- date: "2025-08-27"
+  title: "How to Design Inclusive Vocational Education Systems?"
+  event: "23rd ESPAnet Annual Conference"
+  place: "Milan, Italy"
+
+- date: "2025-05-13"
+  title: "Skill Formation, Recognition and Labour Mobility: Enhancing Competitiveness"
+  event: "School of Transnational Governance, European University Institute"
+  place: "Florence, Italy"
+  invited: true
+
+- date: "2025-04-10"
+  title: "Natural Language Processing in VET Research"
+  event: "Cedefop, European Centre for the Development of Vocational Training"
+  place: "Online"
+  invited: true
+  audience: policy
+
+- date: "2025-04-09"
+  title: "The Quiet Politics of Social Investment"
+  event: "Social Investment Working Group, European University Institute"
+  place: "Florence, Italy"
+
+- date: "2025-03-27"
+  title: "The Governance of Skills Beyond Employer Coordination"
+  event: "European Graduate Network Conference, Pompeu Fabra University"
+  place: "Barcelona, Spain"
+
+- date: "2024-10-28"
+  title: "Why Governments Intervene in Vocational Education and Training Systems"
+  event: "Special issue workshop, University of St Gallen"
+  place: "St Gallen, Switzerland"
+
+- date: "2024-10-16"
+  title: "Training for the Twin Transitions: Why Governments Intervene in Skill Formation"
+  event: "Social Investment Working Group, European University Institute"
+  place: "Florence, Italy"
+
+- date: "2024-08-28"
+  title: "Natural Language Processing and the Analysis of Skill Formation Systems"
+  event: "Kolloquium zur Berufsbildungsforschung, Federal Institute for Vocational Education and Training (BIBB)"
+  place: "Bonn, Germany"
+  invited: true
+  audience: policy
+  url: "https://www.bibb.de/dokumente/pdf/Thies_Abstract.pdf"
+
+- date: "2024-07-04"
+  title: "The Politics of the Individualisation of Continuing Training Rights in France and Germany"
+  event: "30th International Conference of Europeanists, Council for European Studies"
+  place: "Lyon, France"
+
+- date: "2024-07-04"
+  title: "States and Skill Formation"
+  event: "30th International Conference of Europeanists, Council for European Studies"
+  place: "Lyon, France"
+
+- date: "2024-03-27"
+  title: "Linking Transformation and Skill Formation: The Evolving Role of the State in European Vocational Education and Training Systems"
+  event: "ECPR Joint Sessions of Workshops"
+  place: "Lüneburg, Germany"
+
+- date: "2024-03-15"
+  title: "Linking Transformation and Skill Formation: The Evolving Role of the State in European Vocational Education and Training Systems"
+  event: "GOVPET Doctoral Workshop, University of St Gallen"
+  place: "St Gallen, Switzerland"
+
+- date: "2023-11-29"
+  title: "Skill Formation, Natural Language Processing and the Analysis of Institutional Change"
+  event: "Empirical Social Science Seminar Series, University of Marburg"
+  place: "Marburg, Germany"
+  invited: true
+
+- date: "2023-09-05"
+  title: "Beyond Decentralised Cooperation – New Reform Trajectories in European Vocational Education?"
+  event: "ECPR General Conference"
+  place: "Prague, Czech Republic"
+
+- date: "2023-06-27"
+  title: "Past, Present, and Future of Vocational Education in Europe: Towards a Common European Reform Trajectory?"
+  event: "29th International Conference of Europeanists, Council for European Studies"
+  place: "Reykjavik, Iceland"
+
+- date: "2023-06-27"
+  title: "Consenting Defamilialisation: The Hidden Politics of Progressive Family Policy Under Centre-Right Governments"
+  event: "29th International Conference of Europeanists, Council for European Studies"
+  place: "Reykjavik, Iceland"
+
+- date: "2023-03-14"
+  title: "New Reform Trajectories in European Initial and Continuing Vocational Education?"
+  event: "GOVPET Doctoral Workshop, University of Lausanne"
+  place: "Lausanne, Switzerland"
+
+- date: "2023-02-15"
+  title: "The Bureaucratic Politics of Social Investment"
+  event: "Social Investment Working Group, European University Institute"
+  place: "Florence, Italy"
+
+- date: "2022-09-13"
+  title: "Beyond Decentralised Cooperation – New Reform Trajectories in European Vocational Education?"
+  event: "ESPAnet Annual Conference"
+  place: "Vienna, Austria"

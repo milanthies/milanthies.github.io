@@ -1,0 +1,29 @@
+# ---------------------------------------------------------------------------
+# Policy page: current roles and earlier work in government.
+# Policy publications come from publications.yml (type: report) and policy
+# talks from talks.yml (audience: policy), so they are not repeated here.
+#
+#   when   period, in quotes
+#   title  role
+#   org    organisation
+#   text   optional: one or two sentences (Markdown allowed)
+# ---------------------------------------------------------------------------
+
+roles:
+  - when: "Since 2026"
+    title: "Member of the Advisory Council, National Service Point for Adult Education Agencies"
+    org: "Appointed by the German Federal Ministry of Labour and Social Affairs"
+    text: >-
+      The service point (Servicestelle Weiterbildungsagenturen) supports regional
+      networks in building up adult education agencies, which act as contact points
+      for guidance on continuing training. It is an initiative of the ministry and is
+      run by the Federal Institute for Vocational Education and Training (BIBB).
+
+experience:
+  - when: "2019–2020"
+    title: "Policy analyst, Department for Digitalisation and the World of Work"
+    org: "German Federal Ministry of Labour and Social Affairs, Berlin"
+
+  - when: "2018–2019"
+    title: "Head of office and policy advisor to a Member of Parliament"
+    org: "Berlin House of Representatives"

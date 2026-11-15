@@ -1,20 +1,13 @@
 ---
-layout: page
-title: Teaching
+layout: teaching
+title: "Teaching"
 permalink: /teaching/
+description: "Courses taught by Milan Thies at the University of Lausanne, the University of Marburg and the European University Institute, with course materials."
+# Shown below the list of courses.
+closing: >-
+  Teaching evaluations are available on request.
 ---
 
-## Current
+I teach courses on the sociology and politics of education, social inequality and computational text analysis, at bachelor's, master's and doctoral level. The text analysis workshop is hands-on: participants implement methods from dictionaries to topic models in R and apply them to texts from their own research. Its slides, scripts and data are [available online](/teaching/cta-idheap/).
 
-**Computational Text Analysis**, two-day workshop for PhD researchers, IDHEAP, University of Lausanne, 10–11 November 2026.
-[Course page, slides, scripts and data](/teaching/cta-idheap/)
-
-## Previous
-
-**Computational Text Analysis and the Politics of Education**, seminar, University of Marburg, summer term 2025 and winter term 2023/24.
-
-**Sociology of Education**, seminar, University of Lausanne, winter term 2026/2027.
-
-**Structural Inequalities in Education**, IDHEAP, University of Lausanne, spring term 2026.
-
-More information on teaching will follow.
+Earlier, I was a teaching assistant for the master's project seminar at the School of Transnational Governance of the European University Institute. I also worked for several years as a seminar trainer for the Schwarzkopf Foundation Young Europe, teaching courses on how the EU works. My university teaching has been in English; the seminars for the foundation were in German.

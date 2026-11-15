@@ -1,0 +1,57 @@
+# ---------------------------------------------------------------------------
+# Research themes. They appear on the home page (title + teaser) and on the
+# Research page (title + text + the papers that carry the same theme id).
+#
+#   id      short name; papers in publications.yml point to it with "theme:"
+#   colour  blue, green, violet, red or brown (the mark next to each paper)
+#   title   heading
+#   teaser  one sentence for the home page
+#   text    one paragraph for the Research page (Markdown allowed)
+# ---------------------------------------------------------------------------
+
+- id: state
+  colour: blue
+  title: "Vocational Education and Training"
+  teaser: "Why governments intervene in VET systems, and what this means for access to training."
+  text: >-
+    Vocational education and training (VET) in countries such as Germany rests on
+    cooperation between employers, unions and the state, and research has long treated
+    these systems as resistant to change. I show that governments have nonetheless
+    intervened more in most EU member states since the mid-2000s, including in Germany,
+    a least likely case. I study why they intervene, which instruments they use, from
+    training rights to state-organised sectoral alliances, and whether intervention
+    widens access to training.
+
+- id: adult
+  colour: green
+  title: "Adult Education and Training"
+  teaser: "How the governance of adult education and training shapes inequalities and how different policy instruments work."
+  text: >-
+    Participation in adult education and training is unequal: people with higher
+    qualifications, in better jobs and in larger firms train far more than others. I
+    study how the governance of adult learning, and the division of responsibility
+    between employers, individuals and the state, shapes these inequalities. I also
+    study how policy instruments such as individual training rights and training
+    subsidies work in practice.
+
+- id: eu
+  colour: violet
+  title: "EU Employment and Education Policy"
+  teaser: "What EU employment and education policies aim to achieve."
+  text: >-
+    The EU has made skills a political priority, although education and training
+    remain national competences. I study what EU employment and education policies aim
+    to achieve and how their objectives have moved between economic efficiency and
+    social inclusion since the 1980s. I also study how member states adapt European
+    frameworks to their own priorities.
+
+- id: government
+  colour: red
+  title: "Political Parties and Policy Bureaucrats in Policymaking"
+  teaser: "Where major reforms such as parental leave or skills investment come from, and what role coalition politics plays."
+  text: >-
+    Major reforms are shaped inside governments as well as in elections. I study
+    where policy changes such as progressive parental leave reforms or rising investment
+    in skills come from. I look at how coalition partners shape reforms led by a
+    minister from another party, and what role ministerial officials play in designing
+    them.

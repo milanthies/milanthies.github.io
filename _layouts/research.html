@@ -1,0 +1,61 @@
+---
+layout: page
+---
+<div class="prose lead-text">
+  {{ content }}
+</div>
+
+{%- for theme in site.data.research %}
+{%- assign papers = site.data.publications | where: "theme", theme.id -%}
+{%- capture published -%}
+  {%- for paper in papers -%}
+    {%- unless paper.status and paper.status != "" -%}{% include pub.html pub=paper level=4 %}{%- endunless -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- capture in_progress -%}
+  {%- for paper in papers -%}
+    {%- if paper.status and paper.status != "" -%}{% include pub.html pub=paper level=4 %}{%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign published = published | strip -%}
+{%- assign in_progress = in_progress | strip %}
+<section class="theme mark-{{ theme.colour }}" id="{{ theme.id }}">
+  <h2 class="theme-title">{{ theme.title | smartify }}</h2>
+  <div class="prose">
+    {{ theme.text | markdownify }}
+  </div>
+  {%- if published != "" %}
+  <h3 class="sub">Publications</h3>
+  <ul class="pubs">
+    {{ published }}
+  </ul>
+  {%- endif %}
+  {%- if in_progress != "" %}
+  <h3 class="sub">Work in progress</h3>
+  <ul class="pubs">
+    {{ in_progress }}
+  </ul>
+  {%- endif %}
+</section>
+{%- endfor %}
+
+{%- capture other -%}
+  {%- for paper in site.data.publications -%}
+    {%- unless paper.theme or paper.type == "report" or paper.type == "review" -%}{% include pub.html pub=paper level=3 %}{%- endunless -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign other = other | strip -%}
+{%- if other != "" %}
+<section class="theme mark-grey" id="other">
+  <h2 class="theme-title">Thesis and book contributions</h2>
+  <ul class="pubs">
+    {{ other }}
+  </ul>
+</section>
+{%- endif %}
+
+{%- if page.closing %}
+<div class="prose closing">
+  {{ page.closing | markdownify }}
+</div>
+{%- endif %}

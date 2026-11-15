@@ -1,0 +1,45 @@
+---
+layout: page
+---
+<div class="prose lead-text">
+  {{ content }}
+</div>
+
+<section id="roles">
+  <h2>Current roles</h2>
+  {% include rows.html items=site.data.policy.roles %}
+</section>
+
+<section id="experience">
+  <h2>Work in government</h2>
+  {% include rows.html items=site.data.policy.experience %}
+</section>
+
+{%- assign reports = site.data.publications | where: "type", "report" -%}
+{%- if reports.size > 0 %}
+<section id="publications">
+  <h2>Policy publications</h2>
+  <ul class="pubs">
+    {%- for paper in reports %}
+    {% include pub.html pub=paper level=3 %}
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+{%- assign policy_talks = site.data.talks | where: "audience", "policy" -%}
+{%- if policy_talks.size > 0 %}
+<section id="talks">
+  <h2>Invited talks at policy institutions</h2>
+  {% include talks.html audience="policy" %}
+</section>
+{%- endif %}
+
+{%- if page.closing %}
+<section id="contact">
+  <h2>Get in touch</h2>
+  <div class="prose">
+    {{ page.closing | markdownify }}
+  </div>
+</section>
+{%- endif %}

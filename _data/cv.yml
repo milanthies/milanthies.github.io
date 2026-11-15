@@ -1,0 +1,103 @@
+# ---------------------------------------------------------------------------
+# CV page. Publications, teaching and talks are taken from their own files;
+# everything else on the CV is here. Newest first within each list.
+#
+#   when   period, in quotes
+#   title  position, degree or award (*asterisks* give italics)
+#   org    institution
+#   text   optional details (Markdown allowed)
+# ---------------------------------------------------------------------------
+
+positions:
+  - when: "Since Dec 2025"
+    title: "Postdoctoral researcher"
+    org: "Social Policy Unit (Prof. Giuliano Bonoli), IDHEAP, University of Lausanne"
+    text: "GOVPET Leading House on Governance in Vocational and Professional Education and Training; LIVES Centre."
+
+  - when: "2021–2025"
+    title: "PhD researcher"
+    org: "Department of Political and Social Sciences, European University Institute, Florence"
+
+  - when: "2023–2025"
+    title: "Part-time lecturer"
+    org: "Institute of Political Science, University of Marburg"
+
+  - when: "2024"
+    title: "Visiting researcher"
+    org: "Centre for European Studies and Comparative Politics (CEE), Sciences Po Paris"
+    text: "February to July 2024."
+
+  - when: "2023–2024"
+    title: "Visiting researcher"
+    org: "Research Training Group DYNAMICS, Humboldt-Universität zu Berlin"
+    text: "The Dynamics of Demography, Democratic Processes and Public Policy. September 2023 to January 2024."
+
+  - when: "2019–2020"
+    title: "Policy analyst, Department for Digitalisation and the World of Work"
+    org: "German Federal Ministry of Labour and Social Affairs, Berlin"
+
+  - when: "2018–2019"
+    title: "Head of office and policy advisor to a Member of Parliament"
+    org: "Berlin House of Representatives"
+
+education:
+  - when: "2021–2026"
+    title: "PhD in Political and Social Sciences"
+    org: "European University Institute, Florence"
+    text: >-
+      Thesis: *Governing Capabilities: The Political Economy of Skills in the Knowledge
+      Economy*, defended on 2 March 2026. Committee: Anton Hemerijck (EUI, supervisor),
+      Giuliano Bonoli (University of Lausanne), Anke Hassel (Hertie School) and
+      Ellen Immergut (EUI).
+
+  - when: "2018–2021"
+    title: "Master of Public Policy"
+    org: "Hertie School, Berlin"
+    text: "Thesis: *The Governance of Skills for a Digitalised World of Work*. Hertie Fellowship; scholarship of the Friedrich-Ebert-Stiftung."
+
+  - when: "2016–2017"
+    title: "BA (Hons) Political Science, First Class Honours"
+    org: "Nottingham Trent University"
+    text: "Prize for the Best Dissertation, School of Social Sciences."
+
+  - when: "2014–2018"
+    title: "BA Political Science and Economics"
+    org: "University of Münster"
+    text: "Dual degree with Nottingham Trent University. Scholarship of the Friedrich-Ebert-Stiftung."
+
+grants:
+  - when: "2021–2025"
+    title: "Mission funding for fieldwork and conferences"
+    org: "European University Institute"
+
+  - when: "2021–2024"
+    title: "ESR Fund, competitive research grant"
+    org: "European University Institute"
+    text: "For the project *How to Bring the State Back In: Technological Change and Skill Formation in France*."
+
+  - when: "2021–2024"
+    title: "Doctoral scholarship for the European University Institute"
+    org: "German Academic Exchange Service (DAAD)"
+
+service:
+  - when: "Since 2026"
+    title: "Member of the Advisory Council, National Service Point for Adult Education Agencies"
+    org: "Appointed by the German Federal Ministry of Labour and Social Affairs"
+
+  - when: "Since 2025"
+    title: "Co-coordinator of the conference stream *The Politics of Education*"
+    org: "ESPAnet, European Network for Social Policy Analysis"
+
+  - when: "2021–2025"
+    title: "Conference co-organiser and network representative"
+    org: "European Graduate Network"
+
+# Optional: a "Languages" section on the CV page. To show it, remove the "# "
+# in front of the lines below and add "languages" to the list of sections at
+# the top of cv.md.
+#
+# languages:
+#   - name: "German"
+#     level: "native"
+#   - name: "English"
+#     level: "fluent"
