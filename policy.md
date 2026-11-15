@@ -25,4 +25,4 @@ closing: >-
   <span lang="de">Anfragen gerne auch auf Deutsch.</span>
 ---
 
-I worked in government before I turned to research, and I stay close to policy practice.
+I worked in government before I turned to research, and I stay close to policy practice. I share my research with ministries, public agencies and social partners. This page makes my advisory roles and my work in government transparent, and lists policy publications and official invited talks at policy institutions.
