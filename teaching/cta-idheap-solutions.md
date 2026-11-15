@@ -2,6 +2,9 @@
 layout: page
 title: "Computational Text Analysis (IDHEAP): Solutions"
 permalink: /teaching/cta-idheap/solutions/
+description: "Solutions to the exercises of the Computational Text Analysis workshop at IDHEAP, University of Lausanne."
+# Not linked from the course page: keep it out of the sitemap and of search engines.
+noindex: true
 ---
 
 Solutions to the R scripts of the [Computational Text Analysis workshop](/teaching/cta-idheap/). Try the exercises yourself first.
